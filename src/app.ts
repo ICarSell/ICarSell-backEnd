@@ -1,6 +1,11 @@
 import express, { Application } from "express";
 
-const app: Application = express();
-app.use(express.json());
+import cors from "cors";
+import { announcementRouter } from "./routes";
 
-export default app;
+export const app: Application = express();
+
+app.use(express.json());
+app.use(cors());
+
+app.use("/announcement", announcementRouter);
