@@ -1,6 +1,7 @@
 import "dotenv/config";
-import "reflect-metadata";
+
 import { DataSource, DataSourceOptions } from "typeorm";
+
 import path from "path";
 
 const dataSourceConfig = (): DataSourceOptions => {
@@ -9,20 +10,6 @@ const dataSourceConfig = (): DataSourceOptions => {
     __dirname,
     "./migrations/**.{ts,js}"
   );
-
-  console.log("CONSOLE ENT", entitiesPath);
-  console.log("CONSOLE MIGR", migrationsPath);
-
-  const nodeEnv: string | undefined = process.env.NODE_ENV;
-
-  if (nodeEnv === "test") {
-    return {
-      type: "sqlite",
-      database: ":memory:",
-      synchronize: true,
-      entities: [entitiesPath],
-    };
-  }
 
   const dbUrl: string | undefined = process.env.DATABASE_URL;
   if (!dbUrl) {
