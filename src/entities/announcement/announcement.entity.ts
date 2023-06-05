@@ -15,16 +15,16 @@ export class Announcement {
   year: number;
 
   @Column({ type: "decimal", precision: 12, scale: 2 })
-  mileage: number;
+  mileage: number | string;
 
   @Column({ type: "varchar" })
   color: string;
 
   @Column({ type: "decimal", precision: 12, scale: 2 })
-  priceFipe: number;
+  priceFipe: number | string;
 
   @Column({ type: "decimal", precision: 12, scale: 2 })
-  price: number;
+  price: number | string;
 
   @Column({ type: "text" })
   description: string;
