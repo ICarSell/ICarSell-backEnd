@@ -1,7 +1,9 @@
 import {
   IAnnouncement,
+  IReturnAllAnnouncement,
   IReturnAnnouncement,
   IUpdateAnnouncement,
 } from "./announcement/annoucement.interface";
 
-export { IAnnouncement, IReturnAnnouncement, IUpdateAnnouncement };
+export { IAnnouncement, IReturnAnnouncement, IReturnAllAnnouncement,IUpdateAnnouncement };
+

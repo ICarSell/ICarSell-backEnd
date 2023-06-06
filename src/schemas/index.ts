@@ -1,5 +1,6 @@
 import {
   createAnnouncementSchema,
+  returnAllAnnouncementSchema,
   returnAnnouncementSchema,
   updateAnnouncementSchema,
 } from "./announcement/annoucement.schema";
@@ -7,5 +8,6 @@ import {
 export {
   createAnnouncementSchema,
   returnAnnouncementSchema,
+  returnAllAnnouncementSchema,
   updateAnnouncementSchema,
 };
