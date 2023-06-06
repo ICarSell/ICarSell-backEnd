@@ -17,4 +17,8 @@ export const returnAnnouncementSchema = createAnnouncementSchema.extend({
   id: z.string(),
 });
 
+
 export const returnAllAnnouncementSchema = returnAnnouncementSchema.array();
+
+export const updateAnnouncementSchema = createAnnouncementSchema.partial();
+
