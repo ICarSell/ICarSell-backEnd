@@ -1,6 +1,11 @@
 import {
   createAnnouncementSchema,
   returnAnnouncementSchema,
+  updateAnnouncementSchema,
 } from "./announcement/annoucement.schema";
 
-export { createAnnouncementSchema, returnAnnouncementSchema };
+export {
+  createAnnouncementSchema,
+  returnAnnouncementSchema,
+  updateAnnouncementSchema,
+};

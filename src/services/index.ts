@@ -1,3 +1,3 @@
-import { createAnnouncementService } from "./announcement/announcement.service";
+import { createAnnouncementService, updateAnnouncementService } from "./announcement/announcement.service";
 
-export { createAnnouncementService };
+export { createAnnouncementService, updateAnnouncementService };

@@ -1,6 +1,9 @@
 import { Request, Response, request } from "express";
-import { IAnnouncement } from "../../interfaces";
-import { createAnnouncementService } from "../../services";
+import { IAnnouncement, IUpdateAnnouncement } from "../../interfaces";
+import {
+  createAnnouncementService,
+  updateAnnouncementService,
+} from "../../services";
 
 export const createAnnouncementController = async (
   request: Request,
@@ -11,4 +14,18 @@ export const createAnnouncementController = async (
   const newAnnouncement = await createAnnouncementService(data);
 
   return response.status(201).json(newAnnouncement);
+};
+
+export const updateAnnouncementController = async (
+  request: Request,
+  response: Response
+) => {
+  const idAnnouncement = request.params.id;
+
+  const dataUser: IUpdateAnnouncement = request.body;
+
+  const updateAnnouncement: IUpdateAnnouncement =
+    await updateAnnouncementService(dataUser, idAnnouncement);
+
+  return response.status(200).json(updateAnnouncement);
 };

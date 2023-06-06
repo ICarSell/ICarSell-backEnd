@@ -1,7 +1,5 @@
 import "dotenv/config";
-
 import { DataSource, DataSourceOptions } from "typeorm";
-
 import path from "path";
 
 const dataSourceConfig = (): DataSourceOptions => {
