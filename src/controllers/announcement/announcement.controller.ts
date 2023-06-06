@@ -5,6 +5,7 @@ import {
   createAnnouncementService,
   listAnnouncementService,
   updateAnnouncementService,
+  deleteAnnouncementService,
 } from "../../services";
 
 export const createAnnouncementController = async (
@@ -38,5 +39,15 @@ export const updateAnnouncementController = async (
     await updateAnnouncementService(dataUser, idAnnouncement);
 
   return response.status(200).json(updateAnnouncement);
-}
+};
 
+export const deleteCarController = async (
+  request: Request,
+  response: Response
+): Promise<Response> => {
+  const id = request.params.id;
+
+  await deleteAnnouncementService(id);
+
+  return response.status(204).json();
+};
