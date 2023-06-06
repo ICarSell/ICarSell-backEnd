@@ -1,7 +1,7 @@
 import { createAnnouncementService } from "./announcement/announcement.service";
 import { updateAnnouncementService } from "./announcement/updateAnnouncement.service";
-import listAnnouncementService from "./announcement/announcementListCars.service";
 import { deleteAnnouncementService } from "./announcement/deleteAnnouncement.service";
+import { listAnnouncementService } from "./announcement/listAllAnnouncement.service";
 
 export {
   createAnnouncementService,

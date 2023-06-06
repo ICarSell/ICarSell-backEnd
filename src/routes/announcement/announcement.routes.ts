@@ -1,9 +1,4 @@
 import { Router } from "express";
-import {
-  createAnnouncementController,
-  listAnnouncementController,
-  updateAnnouncementController,
-} from "../../controllers/announcement/announcement.controller";
 
 import {
   ensureAnnouncementExistsMiddlewares,
@@ -11,7 +6,11 @@ import {
 } from "../../middlewares";
 
 import { updateAnnouncementSchema } from "../../schemas";
-
+import {
+  createAnnouncementController,
+  listAnnouncementController,
+  updateAnnouncementController,
+} from "../../controllers";
 
 export const announcementRouter: Router = Router();
 
@@ -25,4 +24,3 @@ announcementRouter.patch(
   ensureAnnouncementExistsMiddlewares,
   updateAnnouncementController
 );
-
