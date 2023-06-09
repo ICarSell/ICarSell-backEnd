@@ -8,6 +8,7 @@ import {
 import { updateAnnouncementSchema } from "../../schemas";
 import {
   createAnnouncementController,
+  deleteCarController,
   listAnnouncementController,
   updateAnnouncementController,
 } from "../../controllers";
@@ -24,3 +25,5 @@ announcementRouter.patch(
   ensureAnnouncementExistsMiddlewares,
   updateAnnouncementController
 );
+
+announcementRouter.delete("/:id", deleteCarController);
