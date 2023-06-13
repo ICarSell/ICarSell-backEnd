@@ -1,7 +1,9 @@
 import { ensureAnnouncementExistsMiddlewares } from "./announcement/ensureAnnouncementExits.middlewares";
-import { ensureAnnouncementdValidBodyMiddlewares } from "./announcement/ensureAnnouncementValidBody.middlewares";
+import { ensureValidBodyMiddlewares } from "./bodyRequest/ensureValidBody.middlewares";
+import { ensureTokenValidMiddlewares } from "./ensureToken/ensureTokenValid.middlewares";
 
 export {
   ensureAnnouncementExistsMiddlewares,
-  ensureAnnouncementdValidBodyMiddlewares,
+  ensureValidBodyMiddlewares,
+  ensureTokenValidMiddlewares,
 };

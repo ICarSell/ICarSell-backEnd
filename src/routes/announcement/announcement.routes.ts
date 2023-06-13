@@ -5,7 +5,8 @@ import path from "path";
 
 import {
   ensureAnnouncementExistsMiddlewares,
-  ensureAnnouncementdValidBodyMiddlewares,
+  ensureTokenValidMiddlewares,
+  ensureValidBodyMiddlewares,
 } from "../../middlewares";
 
 import { updateAnnouncementSchema } from "../../schemas";
@@ -56,7 +57,8 @@ announcementRouter.patch(
     { name: "imgCover", maxCount: 1 },
     { name: "gallery", maxCount: 6 },
   ]),
-  ensureAnnouncementdValidBodyMiddlewares(updateAnnouncementSchema),
+  ensureTokenValidMiddlewares,
+  ensureValidBodyMiddlewares(updateAnnouncementSchema),
   ensureAnnouncementExistsMiddlewares,
   updateAnnouncementController
 );
