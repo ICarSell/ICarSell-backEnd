@@ -1,4 +1,11 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import {
+  Column,
+  Entity,
+  JoinColumn,
+  OneToOne,
+  PrimaryGeneratedColumn,
+} from "typeorm";
+import { User } from "../user/user.entity";
 
 @Entity("address")
 export class Address {
@@ -22,6 +29,8 @@ export class Address {
 
   @Column({ length: 10, type: "varchar" })
   complement: string;
-}
 
-// PENDENCIA: FAZER A RELAÇÃO 1:1 COM USERS, AGUARDANDO A CRIAÇÃO DA TABELA.
+  @OneToOne(() => User, (user) => user.address)
+  @JoinColumn()
+  user: User;
+}
