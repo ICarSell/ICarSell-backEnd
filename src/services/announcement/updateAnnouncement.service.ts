@@ -1,30 +1,74 @@
 import { Repository } from "typeorm";
 import { IReturnAnnouncement, IUpdateAnnouncement } from "../../interfaces";
-import { Announcement } from "../../entities";
+import { Announcement, ImgCover, Gallery } from "../../entities";
 import { AppDataSource } from "../../data-source";
 import { returnAnnouncementSchema } from "../../schemas";
 
 export const updateAnnouncementService = async (
-    data: IUpdateAnnouncement,
-    idAnnouncement: string
-  ): Promise<IReturnAnnouncement> => {
-    const announcementRepository: Repository<Announcement> =
-      AppDataSource.getRepository(Announcement);
-  
-    const oldAnnouncementData: Announcement | null =
-      await announcementRepository.findOneBy({
-        id: idAnnouncement,
-      });
-  
-    const newDataAnnouncement = announcementRepository.create({
-      ...oldAnnouncementData,
-      ...data,
-    });
-  
-    await announcementRepository.save(newDataAnnouncement);
-  
-    const announcement = returnAnnouncementSchema.parse(newDataAnnouncement);
-  
-    return announcement;
+  data: IUpdateAnnouncement,
+  idAnnouncement: string,
+  imgCoverFile: Express.Multer.File,
+  galleryFiles: Express.Multer.File[]
+): Promise<IReturnAnnouncement> => {
+  const announcementRepository: Repository<Announcement> =
+    AppDataSource.getRepository(Announcement);
+  const imgCoverRepository: Repository<ImgCover> =
+    AppDataSource.getRepository(ImgCover);
+  const galleryRepository: Repository<Gallery> =
+    AppDataSource.getRepository(Gallery);
+
+  const oldAnnouncementData = await announcementRepository.findOne({
+    where: {
+      id: idAnnouncement,
+    },
+    relations: {
+      imgCover: true,
+      gallery: true,
+    },
+  });
+
+  if (!oldAnnouncementData) {
+    throw new Error("Anúncio não encontrado");
+  }
+
+  const updatedAnnouncementData = {
+    ...oldAnnouncementData,
+    ...data,
   };
-  
+
+  if (imgCoverFile) {
+    const imgCover = new ImgCover();
+    imgCover.fileName = imgCoverFile.filename;
+    imgCover.path = imgCoverFile.path;
+
+    await imgCoverRepository.save(imgCover);
+
+    updatedAnnouncementData.imgCover = imgCover;
+  }
+
+  if (galleryFiles && galleryFiles.length > 0) {
+    await galleryRepository.delete({ announcement: oldAnnouncementData });
+
+    const galleryPromises = galleryFiles.map(async (galleryFile) => {
+      const gallery = new Gallery();
+      gallery.fileName = galleryFile.filename;
+      gallery.path = galleryFile.path;
+      gallery.announcement = updatedAnnouncementData;
+
+      await galleryRepository.save(gallery);
+
+      return gallery;
+    });
+
+    const newGalleryImages = await Promise.all(galleryPromises);
+    updatedAnnouncementData.gallery = newGalleryImages;
+  }
+
+  const updatedAnnouncement = await announcementRepository.save(
+    updatedAnnouncementData
+  );
+
+  const announcement = returnAnnouncementSchema.parse(updatedAnnouncement);
+
+  return announcement;
+};
