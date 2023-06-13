@@ -10,7 +10,11 @@ export const listAnnouncementService =
       AppDataSource.getRepository(Announcement);
 
     const findAnnouncements: Array<Announcement> =
-      await contactsRepository.find();
+      await contactsRepository.find({
+        relations: {
+          imgCover: true,
+        },
+      });
 
     const announcements = returnAllAnnouncementSchema.parse(findAnnouncements);
 

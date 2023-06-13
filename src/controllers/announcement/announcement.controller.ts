@@ -1,4 +1,4 @@
-import { Request, Response, request } from "express";
+import { Request, Response } from "express";
 
 import { IAnnouncement, IUpdateAnnouncement } from "../../interfaces";
 import {
@@ -13,8 +13,18 @@ export const createAnnouncementController = async (
   response: Response
 ) => {
   const data: IAnnouncement = request.body;
+  const files = request.files as { [fieldname: string]: Express.Multer.File[] };
 
-  const newAnnouncement = await createAnnouncementService(data);
+  const imgCoverFile = files["imgCover"][0];
+  const galleryFiles = files["gallery"];
+
+  const newAnnouncement = await createAnnouncementService(
+    data,
+    imgCoverFile,
+    galleryFiles
+  );
+
+  console.log(`controler->${newAnnouncement}`);
 
   return response.status(201).json(newAnnouncement);
 };
@@ -34,9 +44,18 @@ export const updateAnnouncementController = async (
   const idAnnouncement = request.params.id;
 
   const dataUser: IUpdateAnnouncement = request.body;
+  const files = request.files as { [fieldname: string]: Express.Multer.File[] };
+
+  const imgCoverFile = files["imgCover"][0];
+  const galleryFiles = files["gallery"];
 
   const updateAnnouncement: IUpdateAnnouncement =
-    await updateAnnouncementService(dataUser, idAnnouncement);
+    await updateAnnouncementService(
+      dataUser,
+      idAnnouncement,
+      imgCoverFile,
+      galleryFiles
+    );
 
   return response.status(200).json(updateAnnouncement);
 };
