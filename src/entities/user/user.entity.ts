@@ -1,4 +1,5 @@
 import {
+  BeforeInsert,
   Column,
   Entity,
   JoinColumn,
@@ -6,6 +7,7 @@ import {
   PrimaryGeneratedColumn,
 } from "typeorm";
 import { Address } from "../address/address.entity";
+import { hashSync } from "bcryptjs";
 
 @Entity("user")
 export class User {
@@ -39,4 +41,9 @@ export class User {
   @OneToOne(() => Address, (address) => address.user)
   @JoinColumn()
   address: Address;
+
+  @BeforeInsert()
+  hashPass() {
+    this.password = hashSync(this.password, 9);
+  }
 }
