@@ -4,6 +4,7 @@ import {
   IReturnAnnouncement,
   IUpdateAnnouncement,
 } from "./announcement/annoucement.interface";
+import { IDataLogin } from "./login/loginUser.interface";
 import {
   tUserReq,
   tUserReturn,
@@ -20,4 +21,5 @@ export {
   tUserReturn,
   tUserReturnWithoutPass,
   tUserUpdate,
+  IDataLogin,
 };

@@ -5,6 +5,7 @@ import {
   updateAnnouncementController,
 } from "./announcement/announcement.controller";
 import { createUserController } from "./users/users.controller";
+import { loginUserController } from "./login/loginUser.controller";
 
 export {
   updateAnnouncementController,
@@ -12,4 +13,5 @@ export {
   listAnnouncementController,
   deleteCarController,
   createUserController,
+  loginUserController,
 };

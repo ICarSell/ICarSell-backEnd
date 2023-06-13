@@ -1,9 +1,9 @@
 import { ZodTypeAny } from "zod";
 import { NextFunction, Request, Response } from "express";
 
-export const ensureAnnouncementdValidBodyMiddlewares =
+export const ensureValidBodyMiddlewares =
   (schema: ZodTypeAny) =>
-  (request: Request, response: Response, next: NextFunction): void => {
+  (request: Request, response: Response, next: NextFunction): void | [] => {
     const validBody = schema.parse(request.body);
 
     request.body = validBody;
