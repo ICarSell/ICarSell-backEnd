@@ -8,7 +8,6 @@ export const ensureTokenValidMiddlewares = async (
   response: Response,
   next: NextFunction
 ): Promise<void | Response> => {
-  const idUser = request.params.id;
   const token = request.headers.authorization?.split(" ")[1];
 
   if (!token) {
@@ -20,13 +19,12 @@ export const ensureTokenValidMiddlewares = async (
       throw new AppError(error.message, 401);
     }
 
-    if (idUser) {
-      if (idUser === decode?.sub) {
-        return next();
-      }
+    if (decode.isSeller) {
+      response.locals.sellerId = decode.isSeller;
+      return next();
     }
+    response.locals.userId = decode.sub;
+
     throw new AppError("Insufficient permission", 403);
   });
-
-  next();
 };
