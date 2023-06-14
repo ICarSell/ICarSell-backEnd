@@ -3,11 +3,13 @@ import {
   Column,
   Entity,
   JoinColumn,
+  OneToMany,
   OneToOne,
   PrimaryGeneratedColumn,
 } from "typeorm";
 import { Address } from "../address/address.entity";
 import { hashSync } from "bcryptjs";
+import { Announcement } from "../announcement/announcement.entity";
 
 @Entity("user")
 export class User {
@@ -41,6 +43,9 @@ export class User {
   @OneToOne(() => Address, (address) => address.user)
   @JoinColumn()
   address: Address;
+
+  @OneToMany(() => Announcement, (announcement) => announcement.user)
+  announcement: Announcement[];
 
   @BeforeInsert()
   hashPass() {

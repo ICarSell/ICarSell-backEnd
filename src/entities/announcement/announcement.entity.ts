@@ -5,9 +5,11 @@ import {
   OneToOne,
   OneToMany,
   JoinColumn,
+  ManyToOne,
 } from "typeorm";
 import { ImgCover } from "../imgCover/imgCover.entity";
 import { Gallery } from "../gallery/gallery.entity";
+import { User } from "../user/user.entity";
 
 @Entity("announcement")
 export class Announcement {
@@ -43,8 +45,11 @@ export class Announcement {
 
   @OneToOne(() => ImgCover)
   @JoinColumn()
-  imgCover: any;
+  imgCover: ImgCover;
 
   @OneToMany(() => Gallery, (gallery) => gallery.announcement)
   gallery: Gallery[];
+
+  @ManyToOne(() => User, (user) => user.announcement)
+  user: User;
 }
