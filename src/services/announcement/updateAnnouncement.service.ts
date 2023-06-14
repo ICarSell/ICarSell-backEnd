@@ -27,10 +27,6 @@ export const updateAnnouncementService = async (
     },
   });
 
-  if (!oldAnnouncementData) {
-    throw new Error("Anúncio não encontrado");
-  }
-
   const updatedAnnouncementData = {
     ...oldAnnouncementData,
     ...data,
