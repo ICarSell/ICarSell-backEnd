@@ -25,17 +25,20 @@ export class Announcement {
   @Column({ type: "integer" })
   year: number | string;
 
-  @Column({ type: "decimal", precision: 12, scale: 2 })
-  mileage: number | string;
+  @Column({ type: "varchar" })
+  mileage: string;
 
   @Column({ type: "varchar" })
   color: string;
 
-  @Column({ type: "decimal", precision: 12, scale: 2 })
-  priceFipe: number | string;
+  @Column({ type: "varchar" })
+  priceFipe: string;
 
-  @Column({ type: "decimal", precision: 12, scale: 2 })
-  price: number | string;
+  @Column({ type: "varchar" })
+  price: string;
+
+  @Column({})
+  fuel: string;
 
   @Column({ type: "text" })
   description: string;
