@@ -28,10 +28,16 @@ export const loginUserService = async (
     throw new AppError("Invalid credentials", 401);
   }
 
-  const token: string = Jwt.sign({}, process.env.SECRET_KEY!, {
-    expiresIn: "24h",
-    subject: String(user.id),
-  });
+  const token: string = Jwt.sign(
+    {
+      isSeller: user.isSeller,
+    },
+    process.env.SECRET_KEY!,
+    {
+      expiresIn: "24h",
+      subject: String(user.id),
+    }
+  );
 
   return token;
 };
