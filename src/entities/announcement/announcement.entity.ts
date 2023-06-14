@@ -37,7 +37,7 @@ export class Announcement {
   @Column({ type: "varchar" })
   price: string;
 
-  @Column({})
+  @Column({ type: "varchar" })
   fuel: string;
 
   @Column({ type: "text" })
