@@ -24,8 +24,6 @@ export const createAnnouncementController = async (
     galleryFiles
   );
 
-  console.log(`controler->${newAnnouncement}`);
-
   return response.status(201).json(newAnnouncement);
 };
 
@@ -45,6 +43,8 @@ export const updateAnnouncementController = async (
 
   const dataUser: IUpdateAnnouncement = request.body;
   const files = request.files as { [fieldname: string]: Express.Multer.File[] };
+
+  console.log(files);
 
   const imgCoverFile = files["imgCover"][0];
   const galleryFiles = files["gallery"];
