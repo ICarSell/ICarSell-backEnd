@@ -46,7 +46,7 @@ announcementRouter.post(
     { name: "imgCover", maxCount: 1 },
     { name: "gallery", maxCount: 6 },
   ]),
-  ensureTokenValidMiddlewares,
+  // ensureTokenValidMiddlewares,
   createAnnouncementController
 );
 
