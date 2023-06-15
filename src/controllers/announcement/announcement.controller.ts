@@ -13,6 +13,7 @@ export const createAnnouncementController = async (
   response: Response
 ) => {
   const data: IAnnouncement = request.body;
+  console.log(data);
   const files = request.files as { [fieldname: string]: Express.Multer.File[] };
 
   const sellerId = response.locals.userid;

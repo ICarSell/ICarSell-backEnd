@@ -1,5 +1,6 @@
 import { z } from "zod";
 import { addressCreateSchema } from "./address.schemas";
+import { returnAnnouncementSchema } from "../announcement/annoucement.schema";
 
 export const userCreateSchema = z.object({
   name: z.string().max(30).min(4),
@@ -20,3 +21,8 @@ export const userReturnSchema = userCreateSchema.extend({
 export const returnUserSchemaWithoutPass = userReturnSchema.omit({
   password: true,
 });
+
+export const returnUserAnnouncementImgCover =
+  returnUserSchemaWithoutPass.extend({
+    announcement: z.array(returnAnnouncementSchema),
+  });
