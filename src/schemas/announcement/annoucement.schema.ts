@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { userCreateSchema } from "../users/users.schemas";
 
 const imageSchema = z.object({
   fileName: z.string(),

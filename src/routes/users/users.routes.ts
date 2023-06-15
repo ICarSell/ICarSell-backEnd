@@ -1,5 +1,8 @@
 import { Router } from "express";
-import { createUserController } from "../../controllers";
+import {
+  createUserController,
+  listUserByIdController,
+} from "../../controllers";
 import {
   ensureValidBodyMiddlewares,
   verifyCpfExistsMiddleware,
@@ -16,3 +19,5 @@ usersRouter.post(
   verifyCpfExistsMiddleware,
   createUserController
 );
+
+usersRouter.get("/:id", listUserByIdController);
