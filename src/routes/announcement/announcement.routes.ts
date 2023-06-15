@@ -16,6 +16,7 @@ import {
   listAnnouncementController,
   updateAnnouncementController,
 } from "../../controllers";
+import { getAnnouncementByIdController } from "../../controllers/announcement/announcement.controller";
 
 export const announcementRouter: Router = Router();
 
@@ -51,6 +52,7 @@ announcementRouter.post(
 );
 
 announcementRouter.get("", listAnnouncementController);
+announcementRouter.get("/:id", getAnnouncementByIdController);
 
 announcementRouter.patch(
   "/:id",
