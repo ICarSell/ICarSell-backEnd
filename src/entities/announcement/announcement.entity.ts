@@ -46,16 +46,19 @@ export class Announcement {
   @Column({ type: "boolean", default: true })
   isActive: boolean;
 
-  @OneToOne(() => ImgCover)
-  @JoinColumn()
-  imgCover: ImgCover;
-
-  @OneToMany(() => Gallery, (gallery) => gallery.announcement, {
+  @OneToOne(() => ImgCover, (imgcover) => imgcover.announcement, {
     cascade: true,
     onDelete: "CASCADE",
   })
+  @JoinColumn()
+  imgCover: ImgCover;
+
+  @OneToMany(() => Gallery, (gallery) => gallery.announcement)
   gallery: Gallery[];
 
-  @ManyToOne(() => User, (user) => user.announcement)
+  @ManyToOne(() => User, (user) => user.announcement, {
+    cascade: true,
+    onDelete: "CASCADE",
+  })
   user: User;
 }
