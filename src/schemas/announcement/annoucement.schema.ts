@@ -1,6 +1,7 @@
 import { number, z } from "zod";
 import {
   returnUserSchemaWhitoutAdress,
+  returnUserSchemaWithoutPass,
   userCreateSchema,
   userReturnSchema,
 } from "../users/users.schemas";
@@ -53,6 +54,7 @@ export const allAnnouncementSchema = z.object({
   description: z.string(),
   imgCover: allImageSchema,
   isActive: z.boolean().default(true),
+  user: returnUserSchemaWhitoutAdress,
 });
 
 export const allreturnAnnouncementSchema = allAnnouncementSchema.extend({
