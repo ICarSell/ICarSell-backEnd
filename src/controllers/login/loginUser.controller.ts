@@ -8,7 +8,7 @@ export const loginUserController = async (
 ): Promise<Response> => {
   const loginUser: IDataLogin = request.body;
 
-  const token: string = await loginUserService(loginUser);
+  const token: object = await loginUserService(loginUser);
 
-  return response.json({ token: token });
+  return response.json(token);
 };

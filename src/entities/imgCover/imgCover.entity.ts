@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Announcement } from "../announcement/announcement.entity";
 
 @Entity("imgCover")
 export class ImgCover {
@@ -10,4 +11,7 @@ export class ImgCover {
 
   @Column({ type: "text" })
   path: string;
+
+  @OneToOne(() => Announcement, (announcement) => announcement.imgCover)
+  announcement: Announcement;
 }

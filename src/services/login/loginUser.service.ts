@@ -9,7 +9,7 @@ import { AppError } from "../../errors";
 
 export const loginUserService = async (
   dataLogin: IDataLogin
-): Promise<string> => {
+): Promise<object> => {
   const { email, password } = dataLogin;
 
   const userRepository: Repository<User> = AppDataSource.getRepository(User);
@@ -39,5 +39,12 @@ export const loginUserService = async (
     }
   );
 
-  return token;
+  const userId = user.id;
+
+  const returnToken = {
+    token: token,
+    userId: userId,
+  };
+
+  return returnToken;
 };

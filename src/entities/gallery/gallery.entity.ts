@@ -12,6 +12,9 @@ export class Gallery {
   @Column({ type: "text" })
   path: string;
 
-  @ManyToOne(() => Announcement, (announcement) => announcement.gallery)
+  @ManyToOne(() => Announcement, (announcement) => announcement.gallery, {
+    cascade: true,
+    onDelete: "CASCADE",
+  })
   announcement: any;
 }
