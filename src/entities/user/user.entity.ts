@@ -44,7 +44,10 @@ export class User {
   @JoinColumn()
   address: Address;
 
-  @OneToMany(() => Announcement, (announcement) => announcement.user)
+  @OneToMany(() => Announcement, (announcement) => announcement.user, {
+    cascade: true,
+    onDelete: "CASCADE",
+  })
   announcement: Announcement[];
 
   @BeforeInsert()

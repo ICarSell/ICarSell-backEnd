@@ -1,13 +1,14 @@
 import { Repository } from "typeorm";
 import { AppDataSource } from "../../data-source";
-import { Announcement, Gallery, ImgCover } from "../../entities";
+import { Announcement, Gallery, ImgCover, User } from "../../entities";
 import { IAnnouncement, IReturnAnnouncement } from "../../interfaces";
 import { returnAnnouncementSchema } from "../../schemas";
 
 export const createAnnouncementService = async (
   data: IAnnouncement,
   imgCoverFile: Express.Multer.File,
-  galleryFiles: Express.Multer.File[]
+  galleryFiles: Express.Multer.File[],
+  sellerId: string
 ): Promise<IReturnAnnouncement> => {
   try {
     const announcementRepository: Repository<Announcement> =
@@ -17,7 +18,18 @@ export const createAnnouncementService = async (
     const galleryRepository: Repository<Gallery> =
       AppDataSource.getRepository(Gallery);
 
-    const announcement = announcementRepository.create(data);
+    const userRepository: Repository<User> = AppDataSource.getRepository(User);
+
+    const user = await userRepository.findOne({
+      where: {
+        id: sellerId,
+      },
+    });
+
+    const announcement = announcementRepository.create({
+      ...data,
+      user: user!,
+    });
 
     const imgCover = new ImgCover();
     imgCover.fileName = imgCoverFile.filename;
@@ -29,7 +41,7 @@ export const createAnnouncementService = async (
 
     await announcementRepository.save(announcement);
 
-    announcement.gallery = []; // Inicialize a propriedade como um array vazio
+    announcement.gallery = [];
 
     const galleryPromises = galleryFiles.map(async (galleryFile) => {
       const gallery = new Gallery();
@@ -39,8 +51,7 @@ export const createAnnouncementService = async (
 
       await galleryRepository.save(gallery);
 
-      announcement.gallery.push(gallery); // Adicione o objeto gallery ao array
-
+      announcement.gallery.push(gallery);
       return gallery;
     });
 
@@ -50,8 +61,7 @@ export const createAnnouncementService = async (
 
     return newAnnouncement;
   } catch (error) {
-    // Trate o erro adequadamente
     console.error(error);
-    throw error; // Lançe novamente o erro para ser tratado em um middleware de erro ou tratamento de exceção global
+    throw error;
   }
 };
