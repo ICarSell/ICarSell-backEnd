@@ -35,7 +35,7 @@ const allImageSchema = z.object({
 export const allAnnouncementSchema = z.object({
   mark: z.string().max(50),
   model: z.string().max(50),
-  year: z.string(),
+  year: z.string().or(z.number()),
   mileage: z.string(),
   color: z.string(),
   fuel: z.string(),
