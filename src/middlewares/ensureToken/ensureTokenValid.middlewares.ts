@@ -21,6 +21,7 @@ export const ensureTokenValidMiddlewares = async (
 
     if (decode.isSeller) {
       response.locals.sellerId = decode.isSeller;
+      response.locals.userId = decode.sub;
       return next();
     }
     response.locals.userId = decode.sub;
