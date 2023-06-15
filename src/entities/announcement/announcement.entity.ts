@@ -50,7 +50,10 @@ export class Announcement {
   @JoinColumn()
   imgCover: ImgCover;
 
-  @OneToMany(() => Gallery, (gallery) => gallery.announcement)
+  @OneToMany(() => Gallery, (gallery) => gallery.announcement, {
+    cascade: true,
+    onDelete: "CASCADE",
+  })
   gallery: Gallery[];
 
   @ManyToOne(() => User, (user) => user.announcement)

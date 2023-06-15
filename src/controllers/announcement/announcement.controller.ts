@@ -15,13 +15,16 @@ export const createAnnouncementController = async (
   const data: IAnnouncement = request.body;
   const files = request.files as { [fieldname: string]: Express.Multer.File[] };
 
+  const sellerId = response.locals.userid;
+
   const imgCoverFile = files["imgCover"][0];
   const galleryFiles = files["gallery"];
 
   const newAnnouncement = await createAnnouncementService(
     data,
     imgCoverFile,
-    galleryFiles
+    galleryFiles,
+    sellerId
   );
 
   return response.status(201).json(newAnnouncement);
