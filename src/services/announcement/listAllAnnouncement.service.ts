@@ -13,6 +13,7 @@ export const listAnnouncementService =
       await contactsRepository.find({
         relations: {
           imgCover: true,
+          user: true,
         },
       });
 
