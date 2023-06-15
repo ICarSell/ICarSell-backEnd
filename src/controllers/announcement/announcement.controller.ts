@@ -17,7 +17,8 @@ export const createAnnouncementController = async (
   console.log(data);
   const files = request.files as { [fieldname: string]: Express.Multer.File[] };
 
-  const sellerId = response.locals.userid;
+  const sellerId = response.locals.userId;
+  console.log(sellerId);
 
   const imgCoverFile = files["imgCover"][0];
   const galleryFiles = files["gallery"];
