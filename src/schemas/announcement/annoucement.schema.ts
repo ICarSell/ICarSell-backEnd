@@ -1,5 +1,9 @@
-import { z } from "zod";
-import { userCreateSchema } from "../users/users.schemas";
+import { number, z } from "zod";
+import {
+  returnUserSchemaWhitoutAdress,
+  userCreateSchema,
+  userReturnSchema,
+} from "../users/users.schemas";
 
 const imageSchema = z.object({
   fileName: z.string(),
@@ -27,6 +31,10 @@ export const returnAnnouncementSchema = createAnnouncementSchema.extend({
   id: z.string(),
 });
 
+export const returnListOneAnnouncementSchema = returnAnnouncementSchema.extend({
+  user: returnUserSchemaWhitoutAdress,
+});
+
 const allImageSchema = z.object({
   id: z.string(),
   fileName: z.string(),
@@ -36,7 +44,7 @@ const allImageSchema = z.object({
 export const allAnnouncementSchema = z.object({
   mark: z.string().max(50),
   model: z.string().max(50),
-  year: z.string().or(z.number()),
+  year: z.string(),
   mileage: z.string(),
   color: z.string(),
   fuel: z.string(),

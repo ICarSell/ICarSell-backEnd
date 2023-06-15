@@ -22,8 +22,8 @@ export class Announcement {
   @Column({ length: 50, type: "varchar" })
   model: string;
 
-  @Column({ type: "integer" })
-  year: number | string;
+  @Column({ type: "varchar" })
+  year: string;
 
   @Column({ type: "varchar" })
   mileage: string;

@@ -1,13 +1,12 @@
 import { Repository } from "typeorm";
 import { AppDataSource } from "../../data-source";
 import { User } from "../../entities";
-import { returnUserAnnouncementImgCover } from "../../schemas/users/users.schemas";
 import { AppError } from "../../errors";
 
 export const listUserByIdService = async (id: string): Promise<any> => {
   const userRepo: Repository<User> = AppDataSource.getRepository(User);
-
   const findUser = await userRepo
+
     .createQueryBuilder("user")
     .leftJoinAndSelect("user.address", "adress")
     .leftJoinAndSelect("user.announcement", "announcement")
@@ -20,7 +19,7 @@ export const listUserByIdService = async (id: string): Promise<any> => {
     throw new AppError("User not found", 404);
   }
 
-  const returnUser = returnUserAnnouncementImgCover.parse(findUser);
+  const { password: _, ...returnUser } = findUser;
 
   return returnUser;
 };

@@ -7,6 +7,7 @@ import {
   updateAnnouncementService,
   deleteAnnouncementService,
 } from "../../services";
+import { getAnnouncementByIdService } from "../../services/announcement/getAnnouncementbyId.service";
 
 export const createAnnouncementController = async (
   request: Request,
@@ -37,6 +38,17 @@ export const listAnnouncementController = async (
 ) => {
   const allAnnouncements = await listAnnouncementService();
   return response.status(200).json(allAnnouncements);
+};
+
+export const getAnnouncementByIdController = async (
+  request: Request,
+  response: Response
+) => {
+  const getAnnouncement = await getAnnouncementByIdService(
+    String(request.params.id)
+  );
+
+  return response.status(200).json(getAnnouncement);
 };
 
 export const updateAnnouncementController = async (
