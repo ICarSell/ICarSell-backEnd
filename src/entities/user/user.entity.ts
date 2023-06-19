@@ -40,11 +40,13 @@ export class User {
   @Column({ type: "boolean", default: false })
   isSeller: boolean;
 
-  @OneToOne(() => Address, (address) => address.user)
+  @OneToOne(() => Address, (address) => address.user, { onDelete: "CASCADE" })
   @JoinColumn()
   address: Address;
 
-  @OneToMany(() => Announcement, (announcement) => announcement.user)
+  @OneToMany(() => Announcement, (announcement) => announcement.user, {
+    onDelete: "CASCADE",
+  })
   announcement: Announcement[];
 
   @BeforeInsert()
