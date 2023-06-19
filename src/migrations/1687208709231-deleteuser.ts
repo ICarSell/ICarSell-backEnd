@@ -1,7 +1,7 @@
 import { MigrationInterface, QueryRunner } from "typeorm";
 
-export class InitialMigration1686843818465 implements MigrationInterface {
-    name = 'InitialMigration1686843818465'
+export class Deleteuser1687208709231 implements MigrationInterface {
+    name = 'Deleteuser1687208709231'
 
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.query(`CREATE TABLE "imgCover" ("id" uuid NOT NULL DEFAULT uuid_generate_v4(), "fileName" character varying NOT NULL, "path" text NOT NULL, CONSTRAINT "PK_d0d52c085620e730894b27cd5f7" PRIMARY KEY ("id"))`);

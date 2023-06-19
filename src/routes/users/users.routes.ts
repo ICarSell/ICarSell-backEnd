@@ -9,6 +9,7 @@ import {
   verifyEmailExistsMiddleware,
 } from "../../middlewares";
 import { userCreateSchema } from "../../schemas";
+import { deleteUserController } from "../../controllers/users/users.controller";
 
 export const usersRouter: Router = Router();
 
@@ -21,3 +22,5 @@ usersRouter.post(
 );
 
 usersRouter.get("/:id", listUserByIdController);
+
+usersRouter.delete("/:id", deleteUserController);
