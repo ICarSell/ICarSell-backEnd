@@ -14,15 +14,17 @@ export const ensureAnnouncementExistsMiddlewares = async (
   const announcementRepository: Repository<Announcement> =
     AppDataSource.getRepository(Announcement);
 
-  const announcementFindOne: Announcement | null =
-    await announcementRepository.findOneBy({
-      id: idAnnouncement,
-    });
+  const announcementFindOne: Announcement | null = await announcementRepository
+    .createQueryBuilder("announcement")
+    .leftJoinAndSelect("announcement.user", "user")
+    .where("announcement.id = :id", { id: idAnnouncement })
+    .getOne();
 
   if (!announcementFindOne) {
     throw new AppError("Announcement not found", 404);
   }
 
+  response.locals.findAnnouncement = announcementFindOne.user.id;
+
   return next();
 };
-
