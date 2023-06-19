@@ -4,6 +4,7 @@ import { deleteAnnouncementService } from "./announcement/deleteAnnouncement.ser
 import { listAnnouncementService } from "./announcement/listAllAnnouncement.service";
 import { createUserService } from "./users/createUser.service";
 import { loginUserService } from "./login/loginUser.service";
+import updateUserService from "./users/updateUser.service";
 
 export {
   createAnnouncementService,
@@ -12,4 +13,5 @@ export {
   deleteAnnouncementService,
   createUserService,
   loginUserService,
+  updateUserService,
 };
