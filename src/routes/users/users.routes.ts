@@ -10,7 +10,10 @@ import {
   verifyCpfExistsMiddleware,
   verifyEmailExistsMiddleware,
 } from "../../middlewares";
+
 import { userCreateSchema, userUpdateSchema } from "../../schemas";
+import { deleteUserController } from "../../controllers/users/users.controller";
+
 
 export const usersRouter: Router = Router();
 
@@ -24,6 +27,7 @@ usersRouter.post(
 
 usersRouter.get("/:id", listUserByIdController);
 
+
 usersRouter.patch(
   "/",
   ensureTokenValidMiddlewares,
@@ -32,3 +36,6 @@ usersRouter.patch(
   verifyCpfExistsMiddleware,
   updateUserController
 );
+
+usersRouter.delete("/:id", deleteUserController);
+
