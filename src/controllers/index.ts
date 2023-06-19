@@ -7,6 +7,7 @@ import {
 import {
   createUserController,
   listUserByIdController,
+  updateUserController,
 } from "./users/users.controller";
 import { loginUserController } from "./login/loginUser.controller";
 
@@ -18,4 +19,5 @@ export {
   createUserController,
   listUserByIdController,
   loginUserController,
+  updateUserController,
 };

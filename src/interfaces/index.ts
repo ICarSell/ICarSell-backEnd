@@ -9,6 +9,7 @@ import {
   tUserReq,
   tUserReturn,
   tUserReturnWithoutPass,
+  tUserReturnWithoutPassAndAddress,
   tUserUpdate,
 } from "./users/users.interface";
 
@@ -22,4 +23,5 @@ export {
   tUserReturnWithoutPass,
   tUserUpdate,
   IDataLogin,
+  tUserReturnWithoutPassAndAddress,
 };
