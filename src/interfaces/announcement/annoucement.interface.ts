@@ -5,10 +5,21 @@ import {
   returnAnnouncementSchema,
 } from "../../schemas";
 import { DeepPartial } from "typeorm";
-import { returnListOneAnnouncementSchema } from "../../schemas/announcement/annoucement.schema";
+import {
+  createOnlyAnnouncementSchema,
+  returnListOneAnnouncementSchema,
+  returnOnlyInfoAnnouncementSchema,
+} from "../../schemas/announcement/annoucement.schema";
 
 export type IAnnouncement = z.infer<typeof createAnnouncementSchema>;
+export type IAnnouncementOnlyInfo = z.infer<
+  typeof createOnlyAnnouncementSchema
+>;
+
 export type IReturnAnnouncement = z.infer<typeof returnAnnouncementSchema>;
+export type IReturnOnlyInfoAnnouncement = z.infer<
+  typeof returnOnlyInfoAnnouncementSchema
+>;
 
 export type IReturnAllAnnouncement = z.infer<
   typeof returnAllAnnouncementSchema
