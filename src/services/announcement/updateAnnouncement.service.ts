@@ -30,6 +30,7 @@ export const updateAnnouncementService = async (
   const updatedAnnouncementData = {
     ...oldAnnouncementData,
     ...data,
+    isActive: Boolean(data.isActive),
   };
 
   if (imgCoverFile) {

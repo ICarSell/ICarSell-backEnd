@@ -61,7 +61,7 @@ announcementRouter.patch(
     { name: "gallery", maxCount: 6 },
   ]),
   ensureTokenValidMiddlewares,
-  ensureValidBodyMiddlewares(updateAnnouncementSchema),
+  // ensureValidBodyMiddlewares(updateAnnouncementSchema),
   ensureAnnouncementExistsMiddlewares,
   updateAnnouncementController
 );
