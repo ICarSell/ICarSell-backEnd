@@ -8,6 +8,7 @@ import {
   deleteAnnouncementService,
 } from "../../services";
 import { getAnnouncementByIdService } from "../../services/announcement/getAnnouncementbyId.service";
+import { AppError } from "../../errors";
 import { updateOnlyInfoAnnouncementService } from "../../services/announcement/updateOnlyInfoAnnouncement.service";
 
 export const createAnnouncementController = async (
@@ -89,6 +90,10 @@ export const deleteCarController = async (
   request: Request,
   response: Response
 ): Promise<Response> => {
+  if (response.locals.userId != response.locals.findAnnouncement) {
+    throw new AppError("Insufficient permission", 403);
+  }
+
   const id = request.params.id;
 
   await deleteAnnouncementService(id);

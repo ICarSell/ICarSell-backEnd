@@ -66,4 +66,9 @@ announcementRouter.patch(
   updateAnnouncementController
 );
 
-announcementRouter.delete("/:id", deleteCarController);
+announcementRouter.delete(
+  "/:id",
+  ensureTokenValidMiddlewares,
+  ensureAnnouncementExistsMiddlewares,
+  deleteCarController
+);

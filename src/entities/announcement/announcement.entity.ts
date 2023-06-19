@@ -60,5 +60,6 @@ export class Announcement {
     cascade: true,
     onDelete: "CASCADE",
   })
+  @JoinColumn()
   user: User;
 }
