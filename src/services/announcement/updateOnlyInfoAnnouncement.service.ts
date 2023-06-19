@@ -8,7 +8,7 @@ import {
 import { returnOnlyInfoAnnouncementSchema } from "../../schemas/announcement/annoucement.schema";
 
 export const updateOnlyInfoAnnouncementService = async (
-  data: IAnnouncementOnlyInfo,
+  data: any,
   idAnnouncement: string
 ): Promise<IReturnOnlyInfoAnnouncement> => {
   const announcementRepository: Repository<Announcement> =
@@ -22,6 +22,7 @@ export const updateOnlyInfoAnnouncementService = async (
   const newDataAnnouncement = announcementRepository.create({
     ...oldAnnouncementData,
     ...data,
+    isActive: data.isActive === "true",
   });
 
   await announcementRepository.save(newDataAnnouncement);
