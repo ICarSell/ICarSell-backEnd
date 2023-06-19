@@ -11,6 +11,9 @@ export const listAnnouncementService =
 
     const findAnnouncements: Array<Announcement> =
       await contactsRepository.find({
+        where: {
+          isActive: true,
+        },
         relations: {
           imgCover: true,
           user: true,

@@ -28,9 +28,26 @@ export const createAnnouncementSchema = z.object({
   isActive: z.boolean().default(true),
 });
 
+export const createOnlyAnnouncementSchema = z.object({
+  mark: z.string().max(50),
+  model: z.string().max(50),
+  year: z.string(),
+  mileage: z.string(),
+  color: z.string(),
+  priceFipe: z.string(),
+  fuel: z.string(),
+  price: z.string(),
+  description: z.string(),
+  isActive: z.boolean().default(true),
+});
+
 export const returnAnnouncementSchema = createAnnouncementSchema.extend({
   id: z.string(),
 });
+export const returnOnlyInfoAnnouncementSchema =
+  createOnlyAnnouncementSchema.extend({
+    id: z.string(),
+  });
 
 export const returnListOneAnnouncementSchema = returnAnnouncementSchema.extend({
   user: returnUserSchemaWhitoutAdress,

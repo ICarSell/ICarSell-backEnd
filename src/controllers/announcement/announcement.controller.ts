@@ -8,6 +8,7 @@ import {
   deleteAnnouncementService,
 } from "../../services";
 import { getAnnouncementByIdService } from "../../services/announcement/getAnnouncementbyId.service";
+import { updateOnlyInfoAnnouncementService } from "../../services/announcement/updateOnlyInfoAnnouncement.service";
 
 export const createAnnouncementController = async (
   request: Request,
@@ -58,21 +59,28 @@ export const updateAnnouncementController = async (
 ) => {
   const idAnnouncement = request.params.id;
 
-  const dataUser: IUpdateAnnouncement = request.body;
+  const dataUser = request.body;
   const files = request.files as { [fieldname: string]: Express.Multer.File[] };
 
-  console.log(files);
+  if (files) {
+    const imgCoverFile = files["imgCover"][0];
+    const galleryFiles = files["gallery"];
 
-  const imgCoverFile = files["imgCover"][0];
-  const galleryFiles = files["gallery"];
+    const updateAnnouncement: IUpdateAnnouncement =
+      await updateAnnouncementService(
+        dataUser,
+        idAnnouncement,
+        imgCoverFile,
+        galleryFiles
+      );
 
-  const updateAnnouncement: IUpdateAnnouncement =
-    await updateAnnouncementService(
-      dataUser,
-      idAnnouncement,
-      imgCoverFile,
-      galleryFiles
-    );
+    return response.status(200).json(updateAnnouncement);
+  }
+
+  const updateAnnouncement = await updateOnlyInfoAnnouncementService(
+    dataUser,
+    idAnnouncement
+  );
 
   return response.status(200).json(updateAnnouncement);
 };
