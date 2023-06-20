@@ -27,6 +27,7 @@ export const createUserService = async (
   await addressRepository.save(newAddress);
 
   const newUser = returnUserSchemaWithoutPass.parse(user);
+  console.log(newUser);
 
   return newUser;
 };

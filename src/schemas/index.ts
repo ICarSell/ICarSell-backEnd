@@ -10,6 +10,8 @@ import {
   userReturnSchema,
 } from "./users/users.schemas";
 import { loginUserSchema } from "./login/login.schema";
+import { addressCreateSchema } from "./users/address.schemas";
+import { addressReturnSchema } from "./users/address.schemas";
 
 export {
   createAnnouncementSchema,
@@ -20,4 +22,6 @@ export {
   userReturnSchema,
   returnUserSchemaWithoutPass,
   loginUserSchema,
+  addressCreateSchema,
+  addressReturnSchema,
 };
