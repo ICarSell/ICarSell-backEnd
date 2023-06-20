@@ -5,9 +5,11 @@ import {
   updateAnnouncementSchema,
 } from "./announcement/annoucement.schema";
 import {
+  returnUserSchemaWhitoutAdress,
   returnUserSchemaWithoutPass,
   userCreateSchema,
   userReturnSchema,
+  userUpdateSchema,
 } from "./users/users.schemas";
 import { loginUserSchema } from "./login/login.schema";
 import { addressCreateSchema } from "./users/address.schemas";
@@ -24,4 +26,6 @@ export {
   loginUserSchema,
   addressCreateSchema,
   addressReturnSchema,
+  userUpdateSchema,
+  returnUserSchemaWhitoutAdress,
 };

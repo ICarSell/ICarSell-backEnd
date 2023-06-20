@@ -59,12 +59,11 @@ export const updateAnnouncementController = async (
   response: Response
 ) => {
   const idAnnouncement = request.params.id;
-
   const dataUser = request.body;
   const files = request.files as { [fieldname: string]: Express.Multer.File[] };
 
-  if (files) {
-    const imgCoverFile = files["imgCover"][0];
+  if ("imgCover" in files || "gallery" in files) {
+    const imgCoverFile = files["imgCover"]?.[0];
     const galleryFiles = files["gallery"];
 
     const updateAnnouncement: IUpdateAnnouncement =

@@ -13,6 +13,26 @@ export const userCreateSchema = z.object({
   isSeller: z.boolean().default(false),
   address: addressCreateSchema,
 });
+export const userUpdateSchema = userCreateSchema
+  .omit({
+    address: true,
+    password: true,
+    isSeller: true,
+  })
+  .partial()
+  .refine(
+    ({ name, email, cpf, dateOfBirth, description, phone }) =>
+      name !== undefined ||
+      email !== undefined ||
+      cpf !== undefined ||
+      dateOfBirth !== undefined ||
+      description !== undefined ||
+      phone !== undefined,
+    {
+      message: "One of the fields must be defined",
+      path: ["name, email, cpf, dateOfBirth, description or phone"],
+    }
+  );
 
 export const userReturnSchema = userCreateSchema.extend({
   id: z.string(),
