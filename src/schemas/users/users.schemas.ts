@@ -38,9 +38,13 @@ export const userReturnSchema = userCreateSchema.extend({
   id: z.string(),
 });
 
-export const returnUserSchemaWithoutPass = userReturnSchema.omit({
-  password: true,
-});
+export const returnUserSchemaWithoutPass = userReturnSchema
+  .omit({
+    password: true,
+  })
+  .extend({
+    address: addressReturnSchema,
+  });
 
 export const returnUserSchemaWhitoutAdress = returnUserSchemaWithoutPass.omit({
   address: true,

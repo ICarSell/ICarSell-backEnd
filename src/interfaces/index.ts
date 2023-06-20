@@ -12,6 +12,8 @@ import {
   tUserReturnWithoutPassAndAddress,
   tUserUpdate,
 } from "./users/users.interface";
+import { tAddressReq } from "./users/address.interface";
+import { tAddressUpdate } from "./users/address.interface"
 
 export {
   IAnnouncement,
@@ -23,5 +25,7 @@ export {
   tUserReturnWithoutPass,
   tUserUpdate,
   IDataLogin,
+  tAddressReq,
+  tAddressUpdate
   tUserReturnWithoutPassAndAddress,
 };

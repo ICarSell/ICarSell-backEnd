@@ -10,6 +10,7 @@ import {
   updateUserController,
 } from "./users/users.controller";
 import { loginUserController } from "./login/loginUser.controller";
+import { updateAddresByIdController } from "./address/address.controller";
 
 export {
   updateAnnouncementController,
@@ -19,5 +20,6 @@ export {
   createUserController,
   listUserByIdController,
   loginUserController,
+  updateAddresByIdController,
   updateUserController,
 };

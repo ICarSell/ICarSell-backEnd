@@ -2,7 +2,12 @@ import "express-async-errors";
 import express, { Application } from "express";
 import cors from "cors";
 import { handleErrors } from "./errors";
-import { announcementRouter, loginRouter, usersRouter } from "./routes";
+import {
+  addressRouter,
+  announcementRouter,
+  loginRouter,
+  usersRouter,
+} from "./routes";
 import path from "path";
 
 const app: Application = express();
@@ -16,5 +21,6 @@ app.use(cors());
 app.use("/announcement", announcementRouter);
 app.use("/login", loginRouter);
 app.use("/user", usersRouter);
+app.use("/address", addressRouter);
 app.use(handleErrors);
 export default app;
