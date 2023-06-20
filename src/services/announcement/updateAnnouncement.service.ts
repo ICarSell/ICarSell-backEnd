@@ -5,7 +5,7 @@ import { AppDataSource } from "../../data-source";
 import { returnAnnouncementSchema } from "../../schemas";
 
 export const updateAnnouncementService = async (
-  data: IUpdateAnnouncement,
+  data: any,
   idAnnouncement: string,
   imgCoverFile: Express.Multer.File,
   galleryFiles: Express.Multer.File[]
@@ -30,7 +30,7 @@ export const updateAnnouncementService = async (
   const updatedAnnouncementData = {
     ...oldAnnouncementData,
     ...data,
-    isActive: Boolean(data.isActive),
+    isActive: data.isActive === "true",
   };
 
   if (imgCoverFile) {
