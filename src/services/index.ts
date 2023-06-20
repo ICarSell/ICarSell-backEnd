@@ -15,7 +15,7 @@ export {
   deleteAnnouncementService,
   createUserService,
   loginUserService,
-  updateAddressByIdService
+  updateAddressByIdService,
   updateUserService,
   deleteUserService,
 };
