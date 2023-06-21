@@ -9,6 +9,7 @@ import {
   usersRouter,
 } from "./routes";
 import path from "path";
+import { resetPasswordrouter } from "./routes/recoverPassword/recoverPassword.routes";
 
 const app: Application = express();
 
@@ -22,5 +23,6 @@ app.use("/announcement", announcementRouter);
 app.use("/login", loginRouter);
 app.use("/user", usersRouter);
 app.use("/address", addressRouter);
+app.use("", resetPasswordrouter);
 app.use(handleErrors);
 export default app;

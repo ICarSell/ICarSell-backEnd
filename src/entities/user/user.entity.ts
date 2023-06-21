@@ -40,6 +40,12 @@ export class User {
   @Column({ type: "boolean", default: false })
   isSeller: boolean;
 
+  @Column({ type: "varchar", nullable: true })
+  resetToken: string | null;
+
+  @Column({ type: "date", nullable: true })
+  resetTokenExpiration: Date | null;
+
   @OneToOne(() => Address, (address) => address.user, { onDelete: "CASCADE" })
   @JoinColumn()
   address: Address;
