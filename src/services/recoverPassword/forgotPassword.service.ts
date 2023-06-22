@@ -129,7 +129,7 @@ export const forgotPasswordService = async (email: string) => {
       <td class="es-m-p0r" valign="top" align="center" style="padding:0;Margin:0;width:560px">
       <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
       <tr>
-      <td align="center" style="padding:0;Margin:0;font-size:0px"><a target="_blank" href="http://localhost:5173" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:underline;color:#26C6DA;font-size:14px"><img src="https://xesnrw.stripocdn.email/content/guids/CABINET_1dc53956dd17312a99819305511ab0dab4eaa7858ceca36c5a8e8ebd7347fe42/images/motors_shop.png" alt="Logotipo" style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic" title="Logotipo" height="55"></a></td>
+      <td align="center" style="padding:0;Margin:0;font-size:0px"><a target="_blank" href="http://localhost:5173" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:underline;color:#26C6DA;font-size:14px"><img src="https://xesnrw.stripocdn.email/content/guids/CABINET_1dc53956dd17312a99819305511ab0dab4eaa7858ceca36c5a8e8ebd7347fe42/images/motors_shop.png" alt="Motors Shop" style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic" title="Motors Shop" height="55"></a></td>
       </tr>
       </table></td>
       </tr>
@@ -180,7 +180,7 @@ export const forgotPasswordService = async (email: string) => {
       <td class="es-m-p20b" align="left" style="padding:0;Margin:0;width:120px">
       <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
       <tr>
-      <td align="center" style="padding:0;Margin:0;font-size:0px"><a target="_blank" href="http://localhost:5173" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:underline;color:#FFFFFF;font-size:14px"><img class="adapt-img" src="https://xesnrw.stripocdn.email/content/guids/CABINET_1dc53956dd17312a99819305511ab0dab4eaa7858ceca36c5a8e8ebd7347fe42/images/motors_shop_1.png" alt style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic" width="120"></a></td>
+      <td align="center" style="padding:0;Margin:0;font-size:0px"><a target="_blank" href="http://localhost:5173" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:underline;color:#FFFFFF;font-size:14px"><img class="adapt-img" src="https://xesnrw.stripocdn.email/content/guids/CABINET_1dc53956dd17312a99819305511ab0dab4eaa7858ceca36c5a8e8ebd7347fe42/images/motors_shop_1.png" alt="Motors Shop" style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic" width="120" title="Motors Shop"></a></td>
       </tr>
       </table></td>
       </tr>
