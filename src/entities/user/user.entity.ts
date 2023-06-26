@@ -10,6 +10,7 @@ import {
 import { Address } from "../address/address.entity";
 import { hashSync } from "bcryptjs";
 import { Announcement } from "../announcement/announcement.entity";
+import { Comments } from "../comments/comments.entity";
 
 @Entity("user")
 export class User {
@@ -59,4 +60,7 @@ export class User {
   hashPass() {
     this.password = hashSync(this.password, 9);
   }
+
+  @OneToMany(() => Comments, (comments) => comments.user)
+  comments: Comments[];
 }

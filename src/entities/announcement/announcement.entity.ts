@@ -10,6 +10,7 @@ import {
 import { ImgCover } from "../imgCover/imgCover.entity";
 import { Gallery } from "../gallery/gallery.entity";
 import { User } from "../user/user.entity";
+import { Comments } from "../comments/comments.entity";
 
 @Entity("announcement")
 export class Announcement {
@@ -62,4 +63,7 @@ export class Announcement {
   })
   @JoinColumn()
   user: User;
+
+  @OneToMany(() => Comments, (comments) => comments.announcements)
+  comments: Comments[];
 }
