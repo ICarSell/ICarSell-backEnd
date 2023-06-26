@@ -1,4 +1,5 @@
 import {
+  BeforeInsert,
   Column,
   CreateDateColumn,
   Entity,
@@ -7,6 +8,7 @@ import {
 } from "typeorm";
 import { User } from "../user/user.entity";
 import { Announcement } from "../announcement/announcement.entity";
+import moment from "moment-timezone";
 
 @Entity("comments")
 export class Comments {
@@ -16,7 +18,7 @@ export class Comments {
   @Column({ type: "text" })
   comments: string;
 
-  @CreateDateColumn({ type: "date" })
+  @CreateDateColumn()
   createdAt: string | Date;
 
   @ManyToOne(() => User, (user) => user.comments)

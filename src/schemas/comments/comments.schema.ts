@@ -5,5 +5,5 @@ export const createCommentSchema = z.object({
 });
 export const returnCommentSchema = createCommentSchema.extend({
   id: z.number(),
-  createdAt: z.string(),
+  createdAt: z.string().or(z.date()),
 });
