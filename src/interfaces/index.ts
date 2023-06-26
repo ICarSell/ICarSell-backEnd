@@ -13,7 +13,8 @@ import {
   tUserUpdate,
 } from "./users/users.interface";
 import { tAddressReq } from "./users/address.interface";
-import { tAddressUpdate } from "./users/address.interface"
+import { tAddressUpdate } from "./users/address.interface";
+import { tCommentReq, tCommentReturn } from "./comments/comments.interface";
 
 export {
   IAnnouncement,
@@ -26,6 +27,8 @@ export {
   tUserUpdate,
   IDataLogin,
   tAddressReq,
-  tAddressUpdate
+  tAddressUpdate,
   tUserReturnWithoutPassAndAddress,
+  tCommentReq,
+  tCommentReturn,
 };

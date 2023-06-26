@@ -5,8 +5,9 @@ import { listAnnouncementService } from "./announcement/listAllAnnouncement.serv
 import { createUserService } from "./users/createUser.service";
 import { deleteUserService } from "./users/deleteUser.service";
 import { loginUserService } from "./login/loginUser.service";
-import { updateAddressByIdService } from "./address/updateAddress.service"
+import { updateAddressByIdService } from "./address/updateAddress.service";
 import updateUserService from "./users/updateUser.service";
+import { createCommentService } from "./comments/createComments.service";
 
 export {
   createAnnouncementService,
@@ -18,4 +19,5 @@ export {
   updateAddressByIdService,
   updateUserService,
   deleteUserService,
+  createCommentService,
 };
