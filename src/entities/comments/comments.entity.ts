@@ -20,8 +20,8 @@ export class Comments {
   createdAt: string | Date;
 
   @ManyToOne(() => User, (user) => user.comments)
-  user: User[];
+  user: User;
 
   @ManyToOne(() => Announcement, (announcements) => announcements.comments)
-  announcements: Announcement[];
+  announcements: Announcement;
 }

@@ -5,6 +5,7 @@ import { handleErrors } from "./errors";
 import {
   addressRouter,
   announcementRouter,
+  commentsRouter,
   loginRouter,
   usersRouter,
 } from "./routes";
@@ -23,6 +24,7 @@ app.use("/announcement", announcementRouter);
 app.use("/login", loginRouter);
 app.use("/user", usersRouter);
 app.use("/address", addressRouter);
+app.use("/comments", commentsRouter);
 app.use("", resetPasswordrouter);
 app.use(handleErrors);
 export default app;
