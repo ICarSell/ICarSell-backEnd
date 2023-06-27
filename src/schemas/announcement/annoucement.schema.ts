@@ -2,6 +2,7 @@ import { number, z } from "zod";
 import {
   returnUserSchemaWhitoutAdress,
   returnUserSchemaWithoutPass,
+  returnUserToCommentsWhitoutPass,
   userCreateSchema,
   userReturnSchema,
 } from "../users/users.schemas";
@@ -51,7 +52,7 @@ export const returnOnlyInfoAnnouncementSchema =
   });
 
 export const returnListOneAnnouncementSchema = returnAnnouncementSchema.extend({
-  user: returnUserSchemaWhitoutAdress,
+  user: returnUserToCommentsWhitoutPass,
   comments: z.array(returnCommentSchema),
 });
 

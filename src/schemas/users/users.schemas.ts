@@ -46,6 +46,15 @@ export const returnUserSchemaWithoutPass = userReturnSchema
     address: addressReturnSchema,
   });
 
+export const returnUserToCommentsWhitoutPass = userCreateSchema
+  .extend({
+    id: z.string(),
+  })
+  .omit({
+    address: true,
+    password: true,
+  });
+
 export const returnUserSchemaWhitoutAdress = returnUserSchemaWithoutPass.omit({
   address: true,
 });

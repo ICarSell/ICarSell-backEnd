@@ -15,6 +15,7 @@ export const getAnnouncementByIdService = async (
     .leftJoinAndSelect("announcement.imgCover", "imgCover")
     .leftJoinAndSelect("announcement.gallery", "gallery")
     .leftJoinAndSelect("announcement.comments", "comments")
+    .leftJoinAndSelect("comments.user", "commentsUser")
     .where("announcement.id = :id", { id: id })
     .getOne();
 
