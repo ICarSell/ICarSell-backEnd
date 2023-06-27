@@ -5,6 +5,8 @@ import {
   ensureValidBodyMiddlewares,
 } from "../../middlewares";
 import { createCommentSchema } from "../../schemas";
+import { deleteCommentsService } from "../../services/comments/deleteComments.service";
+import { deleteCommentsController } from "../../controllers/comments/comments.controller";
 
 export const commentsRouter: Router = Router();
 
@@ -13,4 +15,10 @@ commentsRouter.post(
   ensureTokenValidMiddlewares,
   ensureValidBodyMiddlewares(createCommentSchema),
   createCommentController
+);
+
+commentsRouter.delete(
+  "/:id",
+  ensureTokenValidMiddlewares,
+  deleteCommentsController
 );
