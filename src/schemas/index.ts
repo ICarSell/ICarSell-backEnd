@@ -14,6 +14,10 @@ import {
 import { loginUserSchema } from "./login/login.schema";
 import { addressCreateSchema } from "./users/address.schemas";
 import { addressReturnSchema } from "./users/address.schemas";
+import {
+  createCommentSchema,
+  returnCommentSchema,
+} from "./comments/comments.schema";
 
 export {
   createAnnouncementSchema,
@@ -28,4 +32,6 @@ export {
   addressReturnSchema,
   userUpdateSchema,
   returnUserSchemaWhitoutAdress,
+  createCommentSchema,
+  returnCommentSchema,
 };

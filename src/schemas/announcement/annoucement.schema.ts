@@ -5,6 +5,7 @@ import {
   userCreateSchema,
   userReturnSchema,
 } from "../users/users.schemas";
+import { returnCommentSchema } from "../comments/comments.schema";
 
 const imageSchema = z.object({
   fileName: z.string(),
@@ -51,6 +52,7 @@ export const returnOnlyInfoAnnouncementSchema =
 
 export const returnListOneAnnouncementSchema = returnAnnouncementSchema.extend({
   user: returnUserSchemaWhitoutAdress,
+  comments: z.array(returnCommentSchema),
 });
 
 const allImageSchema = z.object({
