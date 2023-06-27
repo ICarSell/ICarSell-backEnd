@@ -14,7 +14,11 @@ import {
 } from "./users/users.interface";
 import { tAddressReq } from "./users/address.interface";
 import { tAddressUpdate } from "./users/address.interface";
-import { tCommentReq, tCommentReturn } from "./comments/comments.interface";
+import {
+  tCommentReq,
+  tCommentReturn,
+  tCommentUpdate,
+} from "./comments/comments.interface";
 
 export {
   IAnnouncement,
@@ -31,4 +35,5 @@ export {
   tUserReturnWithoutPassAndAddress,
   tCommentReq,
   tCommentReturn,
+  tCommentUpdate,
 };
