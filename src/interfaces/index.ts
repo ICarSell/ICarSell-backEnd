@@ -18,6 +18,7 @@ import {
   tCommentReq,
   tCommentReturn,
   tCommentUpdate,
+  tCommentReturnNew,
 } from "./comments/comments.interface";
 
 export {
@@ -36,4 +37,5 @@ export {
   tCommentReq,
   tCommentReturn,
   tCommentUpdate,
+  tCommentReturnNew
 };

@@ -17,6 +17,7 @@ import { addressReturnSchema } from "./users/address.schemas";
 import {
   createCommentSchema,
   returnCommentSchema,
+  returnCommentSchemaNew,
 } from "./comments/comments.schema";
 
 export {
@@ -34,4 +35,5 @@ export {
   returnUserSchemaWhitoutAdress,
   createCommentSchema,
   returnCommentSchema,
+  returnCommentSchemaNew,
 };

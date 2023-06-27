@@ -9,3 +9,5 @@ export const returnCommentSchema = createCommentSchema.extend({
   createdAt: z.string().or(z.date()),
   user: returnUserToCommentsWhitoutPass,
 });
+
+export const returnCommentSchemaNew = returnCommentSchema.omit({ user: true });
