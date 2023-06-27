@@ -8,6 +8,7 @@ import { loginUserService } from "./login/loginUser.service";
 import { updateAddressByIdService } from "./address/updateAddress.service";
 import updateUserService from "./users/updateUser.service";
 import { createCommentService } from "./comments/createComments.service";
+import { updateCommentByIdService } from "./comments/updateComments.service";
 
 export {
   createAnnouncementService,
@@ -20,4 +21,5 @@ export {
   updateUserService,
   deleteUserService,
   createCommentService,
+  updateCommentByIdService,
 };

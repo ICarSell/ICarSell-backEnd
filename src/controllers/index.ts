@@ -11,7 +11,10 @@ import {
 } from "./users/users.controller";
 import { loginUserController } from "./login/loginUser.controller";
 import { updateAddresByIdController } from "./address/address.controller";
-import { createCommentController } from "./comments/comments.controller";
+import {
+  createCommentController,
+  updateCommentController,
+} from "./comments/comments.controller";
 
 export {
   updateAnnouncementController,
@@ -24,4 +27,5 @@ export {
   updateAddresByIdController,
   updateUserController,
   createCommentController,
+  updateCommentController,
 };

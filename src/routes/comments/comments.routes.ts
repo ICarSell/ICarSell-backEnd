@@ -1,5 +1,8 @@
 import { Router } from "express";
-import { createCommentController } from "../../controllers";
+import {
+  createCommentController,
+  updateCommentController,
+} from "../../controllers";
 import {
   ensureTokenValidMiddlewares,
   ensureValidBodyMiddlewares,
@@ -21,4 +24,10 @@ commentsRouter.delete(
   "/:id",
   ensureTokenValidMiddlewares,
   deleteCommentsController
+);
+
+commentsRouter.patch(
+  "/:id",
+  ensureTokenValidMiddlewares,
+  updateCommentController
 );
