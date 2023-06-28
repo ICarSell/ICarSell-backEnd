@@ -8,7 +8,6 @@ import {
 } from "typeorm";
 import { User } from "../user/user.entity";
 import { Announcement } from "../announcement/announcement.entity";
-import moment from "moment-timezone";
 
 @Entity("comments")
 export class Comments {
