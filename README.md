@@ -54,7 +54,7 @@ $~$
 
 $~$
 
-[![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=iCarSell&uri=https%3A%2F%2Fraw.githubusercontent.com%2FICarSell%2FDocInsomniabutton%2Fmain%2Fdoc%2520insomnia%2520button)
+[![Run in Insomnia](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=iCarSell&uri=https%3A%2F%2Fraw.githubusercontent.com%2FICarSell%2FDocInsomniabutton%2Fmain%2Fdoc%2520insomnia%2520button)
 
 ---
 
