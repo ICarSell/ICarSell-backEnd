@@ -76,63 +76,63 @@ $~$
 
 ```javascript
 [
-    {
-        "mark": "ford",
-        "model": "ecosport freestyle plus 1.5 flex 5p aut.",
-        "year": "2019",
-        "mileage": "626262",
-        "color": "Preto",
-        "fuel": "Gasolina / Etanol",
-        "priceFipe": "84580",
-        "price": "45.000",
-        "description": "Carro 10",
-        "imgCover": {
-            "id": "36c4ff6e-278a-4ec3-a8be-ce8e4c3fbddb",
-            "fileName": "1687789259462-907667310.jpg",
-            "path": "public\\uploads\\1687789259462-907667310.jpg"
-        },
-        "isActive": true,
-        "user": {
-            "name": "example",
-            "email": "example@example.com",
-            "cpf": "12345678910",
-            "phone": "123456789",
-            "dateOfBirth": 11/11/11,
-            "description": "Uma descrição do usuário",
-            "isSeller": true,
-            "id": "3ad667c0-a4ce-4cff-a1fe-28fdb62f876d"
-        },
-        "id": "191c00bd-3eb0-409b-9811-5f172a41b033"
-    },
-    {
-        "mark": "hyundai",
-        "model": "creta attitude 1.6 16v flex mec.",
-        "year": "2021",
-        "mileage": "5.000",
-        "color": "Vermelho",
-        "fuel": "Gasolina / Etanol",
-        "priceFipe": "97207",
-        "price": "50.000",
-        "description": "Vermelha",
-        "imgCover": { // Imagem de capa do anúncio
-            "id": "54586e1d-accf-4c76-8448-a7886b6f8b64",
-            "fileName": "1687799365678-685778512.png",
-            "path": "public\\uploads\\1687799365678-685778512.png"
-        },
-        "isActive": true,
-        "user": {
-            "name": "example",
-            "email": "example@example.com",
-            "cpf": "12345678910",
-            "phone": "123456789",
-            "dateOfBirth": 11/11/11,
-            "description": "Uma descrição do usuário",
-            "isSeller": true, //se o usuário é vendedor
-            "id": "3ad667c0-a4ce-4cff-a1fe-28fdb62f876d"
-        },
-        "id": "450d25d0-421e-426d-9ce6-dde076905bb2"
-    },
-    ...
+{
+	"mark": "ford",
+	"model": "ecosport freestyle plus 1.5 flex 5p aut.",
+	"year": "2019",
+	"mileage": "626262",
+	"color": "Preto",
+	"fuel": "Gasolina / Etanol",
+	"priceFipe": "84580",
+	"price": "45.000",
+	"description": "Carro 10",
+	"imgCover": {
+		    "id": "36c4ff6e-278a-4ec3-a8be-ce8e4c3fbddb",
+		    "fileName": "1687789259462-907667310.jpg",
+		    "path": "public\\uploads\\1687789259462-907667310.jpg"
+	},
+	"isActive": true,
+	"user": {
+		    "name": "example",
+		    "email": "example@example.com",
+		    "cpf": "12345678910",
+		    "phone": "123456789",
+		    "dateOfBirth": 11/11/11,
+		    "description": "Uma descrição do usuário",
+		    "isSeller": true,
+		    "id": "3ad667c0-a4ce-4cff-a1fe-28fdb62f876d"
+	},
+	"id": "191c00bd-3eb0-409b-9811-5f172a41b033"
+	},
+	{
+	"mark": "hyundai",
+	"model": "creta attitude 1.6 16v flex mec.",
+	"year": "2021",
+	"mileage": "5.000",
+	"color": "Vermelho",
+	"fuel": "Gasolina / Etanol",
+	"priceFipe": "97207",
+	"price": "50.000",
+	"description": "Vermelha",
+	"imgCover": { // Imagem de capa do anúncio
+		    "id": "54586e1d-accf-4c76-8448-a7886b6f8b64",
+		    "fileName": "1687799365678-685778512.png",
+		    "path": "public\\uploads\\1687799365678-685778512.png"
+	},
+	"isActive": true,
+	"user": {
+		    "name": "example",
+		    "email": "example@example.com",
+		    "cpf": "12345678910",
+		    "phone": "123456789",
+		    "dateOfBirth": 11/11/11,
+		    "description": "Uma descrição do usuário",
+		    "isSeller": true, //se o usuário é vendedor
+		    "id": "3ad667c0-a4ce-4cff-a1fe-28fdb62f876d"
+	},
+	"id": "450d25d0-421e-426d-9ce6-dde076905bb2"
+},
+...
 ]
 ```
 
@@ -142,7 +142,7 @@ $~$
 
 ```json
 {
-  "mensage": "Nenhum anúncio foi encontrado"
+"message": "Nenhum anúncio foi encontrado"
 }
 ```
 
@@ -162,58 +162,58 @@ $~$
 
 ```javascript
 {
-	"mark": "ford",
-	"model": "ecosport freestyle plus 1.5 flex 5p aut.",
-	"year": "2019",
-	"mileage": "626.262",
-	"color": "Preto",
-	"priceFipe": "84580",
-	"fuel": "Gasolina / Etanol",
-	"price": "45.000",
-	"description": "Carro 10",
-	"imgCover": { // Imagem  de capa do anúncio
-		"fileName": "1687789259462-907667310.jpg",
-		"path": "public\\uploads\\1687789259462-907667310.jpg"
+"mark": "ford",
+"model": "ecosport freestyle plus 1.5 flex 5p aut.",
+"year": "2019",
+"mileage": "626.262",
+"color": "Preto",
+"priceFipe": "84580",
+"fuel": "Gasolina / Etanol",
+"price": "45.000",
+"description": "Carro 10",
+"imgCover": { // Imagem  de capa do anúncio
+	"fileName": "1687789259462-907667310.jpg",
+	"path": "public\\uploads\\1687789259462-907667310.jpg"
+},
+"gallery": [ // Lista com todas as imagens de galeria
+	{
+	"fileName": "1687789259462-443189491.png",
+	"path": "public\\uploads\\1687789259462-443189491.png"
 	},
-	"gallery": [ // Lista com todas as imagens de galeria
-		{
-			"fileName": "1687789259462-443189491.png",
-			"path": "public\\uploads\\1687789259462-443189491.png"
-		},
-		{
-			"fileName": "1687789259489-790365258.png",
-			"path": "public\\uploads\\1687789259489-790365258.png"
-		},
-		{
-			"fileName": "1687789259498-111753184.png",
-			"path": "public\\uploads\\1687789259498-111753184.png"
-		},
-		{
-			"fileName": "1687789259510-92505429.jpg",
-			"path": "public\\uploads\\1687789259510-92505429.jpg"
-		},
-		{
-			"fileName": "1687789259509-695840688.jpg",
-			"path": "public\\uploads\\1687789259509-695840688.jpg"
-		},
-		{
-			"fileName": "1687789259509-428068248.jpg",
-			"path": "public\\uploads\\1687789259509-428068248.jpg"
-		}
-	],
-	"isActive": true,
-	"id": "191c00bd-3eb0-409b-9811-5f172a41b033",
-	"user": {
-		"name": "example",
-        "email": "example@example.com",
-        "cpf": "12345678910",
-        "phone": "123456789",
-        "dateOfBirth": 11/11/11,
-        "description": "Uma descrição do usuário",
-        "isSeller": true, //se o usuário é vendedor
-		"id": "3ad667c0-a4ce-4cff-a1fe-28fdb62f876d"
+	{
+	"fileName": "1687789259489-790365258.png",
+	"path": "public\\uploads\\1687789259489-790365258.png"
 	},
-	"comments": [] // lista com todos os comentários sobre o anúncio
+	{
+	"fileName": "1687789259498-111753184.png",
+	"path": "public\\uploads\\1687789259498-111753184.png"
+	},
+	{
+	"fileName": "1687789259510-92505429.jpg",
+	"path": "public\\uploads\\1687789259510-92505429.jpg"
+	},
+	{
+	"fileName": "1687789259509-695840688.jpg",
+	"path": "public\\uploads\\1687789259509-695840688.jpg"
+	},
+	{
+	"fileName": "1687789259509-428068248.jpg",
+	"path": "public\\uploads\\1687789259509-428068248.jpg"
+	}
+],
+"isActive": true,
+"id": "191c00bd-3eb0-409b-9811-5f172a41b033",
+"user": {
+	"name": "example",
+	"email": "example@example.com",
+	"cpf": "12345678910",
+	"phone": "123456789",
+	"dateOfBirth": 11/11/11,
+	"description": "Uma descrição do usuário",
+	"isSeller": true, //se o usuário é vendedor
+	"id": "3ad667c0-a4ce-4cff-a1fe-28fdb62f876d"
+},
+"comments": [] // lista com todos os comentários sobre o anúncio
 }
 ```
 
@@ -223,7 +223,7 @@ $~$
 
 ```javascript
 {
-    "mensage": "Announcement not found"
+"message": "Announcement not found"
 }
 ```
 
@@ -239,21 +239,21 @@ $~$
 
 ```javascript
 {
-	"name": "example",
-	"email": "example@gmail.com",
-	"password": "*******",
-	"cpf": "12312312312",
-	"phone": "123456789",
-	"dateOfBirth": 12 // dateOfBirth é apenas o dia do aniversario
-	"description":"Eu gosto de carros",
-	"isSeller": true //isSeller é para definir se ele é venderdor ou não
-	"address": {
-		"zipCode": "123456789",
-		"city": "SP",
-		"state": "estado tal",
-		"street": "rua tal",
-		"number": "123",
-		"complement": "casa"
+"name": "example",
+"email": "example@gmail.com",
+"password": "*******",
+"cpf": "12312312312",
+"phone": "123456789",
+"dateOfBirth": 12 // dateOfBirth é apenas o dia do aniversario
+"description":"Eu gosto de carros",
+"isSeller": true //isSeller é para definir se ele é venderdor ou não
+"address": {
+	"zipCode": "123456789",
+	"city": "SP",
+	"state": "estado tal",
+	"street": "rua tal",
+	"number": "123",
+	"complement": "casa"
 	}
 }
 ```
@@ -264,23 +264,23 @@ $~$
 
 ```javascript
 {
-  "name": "example",
-  "email": "example@gmail.com",
-  "cpf": "12312312312",
-  "phone": "123456789",
-  "dateOfBirth": 12,
-  "description": "Eu gosto de carros",
-  "isSeller": true,
-  "address": {
-    "zipCode": "123456789",
-    "state": "estado tal",
-    "city": "SP",
-    "street": "rua tal",
-    "number": "123",
-    "complement": "casa",
-    "id": "2465b6aa-6beb-4ba5-825a-fb96eefebef1"
-  },
-  "id": "cc3480b6-8e0b-45cc-877a-4ac2bd8d54bb"
+"name": "example",
+"email": "example@gmail.com",
+"cpf": "12312312312",
+"phone": "123456789",
+"dateOfBirth": 12,
+"description": "Eu gosto de carros",
+"isSeller": true,
+"address": {
+	"zipCode": "123456789",
+	"state": "estado tal",
+	"city": "SP",
+	"street": "rua tal",
+	"number": "123",
+	"complement": "casa",
+	"id": "2465b6aa-6beb-4ba5-825a-fb96eefebef1"
+},
+"id": "cc3480b6-8e0b-45cc-877a-4ac2bd8d54bb"
 }
 ```
 
@@ -292,7 +292,7 @@ $~$
 
 ```javascript
 {
-  "message": "Email already exists"
+"message": "Email already exists"
 }
 ```
 
@@ -304,7 +304,7 @@ $~$
 
 ```javascript
 {
-  "message": "CPF already exists"
+"message": "CPF already exists"
 }
 ```
 
@@ -322,26 +322,26 @@ $~$
 
 ```javascript
 {
-  "id": "cc3480b6-8e0b-45cc-877a-4ac2bd8d54bb",
-  "name": "example",
-  "email": "example@gmail.com",
-  "cpf": "12312312312",
-  "phone": "123456789",
-  "dateOfBirth": 12,
-  "description": "Eu gosto de carros",
-  "isSeller": true,
-  "resetToken": null,
-  "resetTokenExpiration": null,
-  "address": {
-    "id": "2465b6aa-6beb-4ba5-825a-fb96eefebef1",
-    "zipCode": "123456789",
-    "state": "estado tal",
-    "city": "SP",
-    "street": "rua tal",
-    "number": "123",
-    "complement": "casa"
-  },
-  "announcement": []
+"id": "cc3480b6-8e0b-45cc-877a-4ac2bd8d54bb",
+"name": "example",
+"email": "example@gmail.com",
+"cpf": "12312312312",
+"phone": "123456789",
+"dateOfBirth": 12,
+"description": "Eu gosto de carros",
+"isSeller": true,
+"resetToken": null,
+"resetTokenExpiration": null,
+"address": {
+	"id": "2465b6aa-6beb-4ba5-825a-fb96eefebef1",
+	"zipCode": "123456789",
+	"state": "estado tal",
+	"city": "SP",
+	"street": "rua tal",
+	"number": "123",
+	"complement": "casa"
+},
+"announcement": []
 }
 ```
 
@@ -351,7 +351,7 @@ $~$
 
 ```javascript
 {
-  "message": "invalid UUID"
+"message": "invalid UUID"
 }
 ```
 
@@ -365,8 +365,8 @@ $~$
 
 ```javascript
 {
- 	"email": "example@gmail.com",
-    "password": "*******"
+"email": "example@gmail.com",
+"password": "*******"
 }
 ```
 
@@ -374,8 +374,8 @@ $~$
 
 ```javascript
 {
-	"userId": "2465b6aa-6beb-4ba5-825a-fb96eefebef1",
-	"token": "<TOKEN_DE_AUTENTICAÇÃO>"
+"userId": "2465b6aa-6beb-4ba5-825a-fb96eefebef1",
+"token": "<TOKEN_DE_AUTENTICAÇÃO>"
 }
 ```
 
@@ -383,7 +383,7 @@ $~$
 
 ```javascript
 {
-    "mensage": "Invalid email"
+"message": "Invalid email"
 }
 ```
 
@@ -391,7 +391,7 @@ $~$
 
 ```javascript
 {
-    "mensage": "Invalid credentials"
+"message": "Invalid credentials"
 }
 ```
 
@@ -409,7 +409,7 @@ $~$
 
 ```javascript
 {
-	"email": "exemplo@gmail.com"
+"email": "exemplo@gmail.com"
 }
 ```
 
@@ -419,7 +419,7 @@ $~$
 
 ```javascript
 {
-	"message": "E-mail de recuperação de senha enviado."
+"message": "E-mail de recuperação de senha enviado."
 }
 ```
 
@@ -429,7 +429,7 @@ $~$
 
 ```javascript
 {
-	"message": "Erro ao processar a solicitação."
+"message": "Erro ao processar a solicitação."
 }
 ```
 
@@ -441,7 +441,7 @@ $~$
 
 ```javascript
 {
-	"password": "senhaAtualizada"
+"password": "senhaAtualizada"
 }
 ```
 
@@ -451,7 +451,7 @@ $~$
 
 ```javascript
 {
-	"message": "Senha redefinida com sucesso."
+"message": "Senha redefinida com sucesso."
 }
 ```
 
@@ -461,7 +461,7 @@ $~$
 
 ```javascript
 {
-	"message": "Erro ao processar a solicitação."
+"message": "Erro ao processar a solicitação."
 }
 ```
 
@@ -487,12 +487,12 @@ $~$
 
 ```javascript
 {
-	"name": "new example",
-	"email": "example2@gmail.com",
-	"cpf": "12312312317",
-	"phone": "123456789",
-	"dateOfBirth": 12,
-	"description":"Eu gosto de carros"
+"name": "new example",
+"email": "example2@gmail.com",
+"cpf": "12312312317",
+"phone": "123456789",
+"dateOfBirth": 12,
+"description":"Eu gosto de carros"
 }
 ```
 
@@ -502,14 +502,14 @@ $~$
 
 ```javascript
 {
-  "name": "new example",
-  "email": "example2@gmail.com",
-  "cpf": "12312312317",
-  "phone": "123456789",
-  "dateOfBirth": 12,
-  "description": "Eu gosto de carros",
-  "isSeller": true,
-  "id": "cc3480b6-8e0b-45cc-877a-4ac2bd8d54bb"
+"name": "new example",
+"email": "example2@gmail.com",
+"cpf": "12312312317",
+"phone": "123456789",
+"dateOfBirth": 12,
+"description": "Eu gosto de carros",
+"isSeller": true,
+"id": "cc3480b6-8e0b-45cc-877a-4ac2bd8d54bb"
 }
 ```
 
@@ -521,7 +521,7 @@ $~$
 
 ```javascript
 {
-  "message": "Email already exists"
+"message": "Email already exists"
 }
 ```
 
@@ -533,7 +533,7 @@ $~$
 
 ```javascript
 {
-  "message": "CPF already exists"
+"message": "CPF already exists"
 }
 ```
 
@@ -548,12 +548,12 @@ $~$
 ```javascript
 
 {
-	"zipCode": "12345678",
-	"state": "MG",
-	"city": "cidade atualizada",
-	"street": "rua atualizada",
-	"number": "10",
-	"complement": "Apt 5B"
+"zipCode": "12345678",
+"state": "MG",
+"city": "cidade atualizada",
+"street": "rua atualizada",
+"number": "10",
+"complement": "Apt 5B"
 }
 
 ```
@@ -565,12 +565,12 @@ $~$
 ```javascript
 
 {
-	"zipCode": "12345678",
-	"state": "MG",
-	"city": "cidade atualizada",
-	"street": "rua atualizada",
-	"number": "10",
-	"complement": "Apt 5B"
+"zipCode": "12345678",
+"state": "MG",
+"city": "cidade atualizada",
+"street": "rua atualizada",
+"number": "10",
+"complement": "Apt 5B"
 }
 
 ```
@@ -581,7 +581,7 @@ $~$
 
 ```javascript
 {
-	"message": "address not found"
+"message": "address not found"
 }
 ```
 
@@ -607,7 +607,7 @@ $~$
 
 ```javascript
 {
-  "message": "User not exist!"
+"message": "User not exist!"
 }
 ```
 
@@ -629,18 +629,18 @@ $~$
 
 ```javascript
 {
-	"mark": "chevrolet",
-	"model": "prisma",
-	"year": "2021",
-	"mileage": "55.555",
-	"color": "azul",
-	"priceFipe": "85.100",
-	"fuel": "gasolina",
-	"price": "50.000",
-	"description": "kafnkjlnavjbevljçnvjhnvd",
-	"imgCover": {`Arquivo de imagem`},
-	"gallery": [`Arquivos de imagens`],
-	"isActive": true,
+"mark": "chevrolet",
+"model": "prisma",
+"year": "2021",
+"mileage": "55.555",
+"color": "azul",
+"priceFipe": "85.100",
+"fuel": "gasolina",
+"price": "50.000",
+"description": "kafnkjlnavjbevljçnvjhnvd",
+"imgCover": {`Arquivo de imagem`},
+"gallery": [`Arquivos de imagens`],
+"isActive": true,
 }
 ```
 
@@ -650,27 +650,27 @@ $~$
 
 ```javascript
 {
-	"mark": "chevrolet",
-	"model": "prisma",
-	"year": "2021",
-	"mileage": "55.555",
-	"color": "azul",
-	"priceFipe": "85.100",
-	"fuel": "gasolina",
-	"price": "50.000",
-	"description": "kafnkjlnavjbevljçnvjhnvd",
-	"imgCover": {
-		"fileName": "1687354251850-390140664.jpg",
-		"path": "public\\uploads\\1687354251850-390140664.jpg"
-	},
-	"gallery": [
-		{
-			"fileName": "1687354251903-462250218.jpg",
-			"path": "public\\uploads\\1687354251903-462250218.jpg"
-		}
-	],
-	"isActive": true,
-	"id": "0f695153-c914-4f37-9e64-e50ca9385087"
+"mark": "chevrolet",
+"model": "prisma",
+"year": "2021",
+"mileage": "55.555",
+"color": "azul",
+"priceFipe": "85.100",
+"fuel": "gasolina",
+"price": "50.000",
+"description": "descrição",
+"imgCover": {
+	"fileName": "1687354251850-390140664.jpg",
+	"path": "public\\uploads\\1687354251850-390140664.jpg"
+},
+"gallery": [
+	{
+	"fileName": "1687354251903-462250218.jpg",
+	"path": "public\\uploads\\1687354251903-462250218.jpg"
+	}
+],
+"isActive": true,
+"id": "0f695153-c914-4f37-9e64-e50ca9385087"
 }
 ```
 
@@ -684,18 +684,18 @@ $~$
 
 ```javascript
 {
-	"mark": "chevrolet",
-	"model": "prisma",
-	"year": "2021",
-	"mileage": "55.555",
-	"color": "azul",
-	"priceFipe": "85.100",
-	"fuel": "gasolina",
-	"price": "50.000",
-	"description": "kafnkjlnavjbevljçnvjhnvd",
-	"imgCover": {`Arquivo de imagem`},
-	"gallery": [`Arquivos de imagens`],
-	"isActive": true,
+"mark": "chevrolet",
+"model": "prisma",
+"year": "2021",
+"mileage": "55.555",
+"color": "azul",
+"priceFipe": "85.100",
+"fuel": "gasolina",
+"price": "50.000",
+"description": "descrição",
+"imgCover": {`Arquivo de imagem`},
+"gallery": [`Arquivos de imagens`],
+"isActive": true,
 }
 ```
 
@@ -705,16 +705,16 @@ $~$
 
 ```javascript
 {
-	"mark": "chevrolet",
-	"model": "prisma",
-	"year": "2021",
-	"mileage": "55.555",
-	"color": "azul",
-	"priceFipe": "85.100",
-	"fuel": "gasolina",
-	"price": "50.000",
-	"description": "kafnkjlnavjbevljçnvjhnvd",
-	"isActive": true,
+"mark": "chevrolet",
+"model": "prisma",
+"year": "2021",
+"mileage": "55.555",
+"color": "azul",
+"priceFipe": "85.100",
+"fuel": "gasolina",
+"price": "50.000",
+"description": "descrição",
+"isActive": true,
 }
 ```
 
@@ -724,27 +724,27 @@ $~$
 
 ```javascript
 {
-	"mark": "chevrolet",
-	"model": "prisma",
-	"year": "2021",
-	"mileage": "55.555",
-	"color": "azul",
-	"priceFipe": "85.100",
-	"fuel": "gasolina",
-	"price": "50.000",
-	"description": "kafnkjlnavjbevljçnvjhnvd",
-	"imgCover": {
-		"fileName": "1687354251850-390140664.jpg",
-		"path": "public\\uploads\\1687354251850-390140664.jpg"
+"mark": "chevrolet",
+"model": "prisma",
+"year": "2021",
+"mileage": "55.555",
+"color": "azul",
+"priceFipe": "85.100",
+"fuel": "gasolina",
+"price": "50.000",
+"description": "descrição",
+"imgCover": {
+	"fileName": "1687354251850-390140664.jpg",
+	"path": "public\\uploads\\1687354251850-390140664.jpg"
 	},
-	"gallery": [
-		{
-			"fileName": "1687354251903-462250218.jpg",
-			"path": "public\\uploads\\1687354251903-462250218.jpg"
-		}
-	],
-	"isActive": true,
-	"id": "0f695153-c914-4f37-9e64-e50ca9385087"
+"gallery": [
+	{
+	"fileName": "1687354251903-462250218.jpg",
+	"path": "public\\uploads\\1687354251903-462250218.jpg"
+	}
+],
+"isActive": true,
+"id": "0f695153-c914-4f37-9e64-e50ca9385087"
 }
 ```
 
@@ -780,19 +780,19 @@ $~$
 
 ```javascript
 {
-	"comments": "ola",
-	"id": 4,
-	"createdAt": "2023-06-27T03:00:00.000Z",
-	"user": {
-		"name": "diego andre",
-		"email": "diegodocanto@gmail.com",
-		"cpf": "123123133",
-		"phone": "123456789",
-		"dateOfBirth": 13,
-		"description": "avjdlanvkjlanvanvdabvjdabvcjxbcjxgcejavgduvbadjlvbd",
-		"isSeller": true,
-		"id": "c695fa1a-99f7-443a-8e53-4ce5fba0b017"
-	}
+"comments": "ola",
+"id": 4,
+"createdAt": "2023-06-27T03:00:00.000Z",
+"user": {
+	"name": "diego andre",
+	"email": "diegodocanto@gmail.com",
+	"cpf": "123123133",
+	"phone": "123456789",
+	"dateOfBirth": 13,
+	"description": "avjdlanvkjlanvanvdabvjdabvcjxbcjxgcejavgduvbadjlvbd",
+	"isSeller": true,
+	"id": "c695fa1a-99f7-443a-8e53-4ce5fba0b017"
+}
 }
 
 ```
@@ -803,7 +803,7 @@ $~$
 
 ```javascript
 {
-	"message": "invalid UUID"
+"message": "invalid UUID"
 }
 ```
 
@@ -811,7 +811,7 @@ $~$
 
 ```javascript
 {
-	"message": "Anúncio não encontrado!"
+"message": "Anúncio não encontrado!"
 }
 ```
 
@@ -819,7 +819,7 @@ $~$
 
 ```javascript
 {
-	"message": "Missing bearer token"
+"message": "Missing bearer token"
 }
 ```
 
@@ -841,7 +841,7 @@ $~$
 
 ```javascript
 {
-	"message": "Comment not exist!"
+"message": "Comment not exist!"
 }
 ```
 
@@ -849,7 +849,7 @@ $~$
 
 ```javascript
 {
-	"message": "Missing bearer token"
+"message": "Missing bearer token"
 }
 ```
 
@@ -861,7 +861,7 @@ $~$
 
 ```javascript
 {
-	"comments": "gostaria de saber mais"
+"comments": "gostaria de saber mais"
 }
 ```
 
@@ -869,9 +869,9 @@ $~$
 
 ```javascript
 {
-	"comments": "gostaria de saber mais",
-	"id": 2,
-	"createdAt": "2023-06-28T00:03:49.666Z"
+"comments": "gostaria de saber mais",
+"id": 2,
+"createdAt": "2023-06-28T00:03:49.666Z"
 }
 ```
 
@@ -881,7 +881,7 @@ $~$
 
 ```javascript
 {
-	"message": "Comment not exist!"
+"message": "Comment not exist!"
 }
 ```
 
@@ -889,6 +889,6 @@ $~$
 
 ```javascript
 {
-	"message": "Missing bearer token"
+"message": "Missing bearer token"
 }
 ```
