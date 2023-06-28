@@ -2,20 +2,20 @@ import { Repository } from "typeorm";
 import { AppDataSource } from "../../data-source";
 import { Comments } from "../../entities";
 import { AppError } from "../../errors";
-import { tCommentUpdate } from "../../interfaces";
-import { returnCommentSchema } from "../../schemas";
+import { tCommentReturnNew, tCommentUpdate } from "../../interfaces";
+import { returnCommentSchema, returnCommentSchemaNew } from "../../schemas";
 
 export const updateCommentByIdService = async (
-  dataComment: tCommentUpdate,
+  dataComment: tCommentReturnNew,
   idComment: number
-): Promise<tCommentUpdate> => {
+): Promise<tCommentReturnNew> => {
   const CommentRepository: Repository<Comments> =
     AppDataSource.getRepository(Comments);
 
   const oldCommentData: Comments | null = await CommentRepository.findOneBy({
     id: idComment,
   });
-
+  console.log(dataComment);
   if (!oldCommentData) {
     throw new AppError("Comment not found", 404);
   }
@@ -27,7 +27,7 @@ export const updateCommentByIdService = async (
 
   await CommentRepository.save(newDataComment);
 
-  const comment: tCommentUpdate = returnCommentSchema.parse(newDataComment);
+  const comment: tCommentReturnNew = returnCommentSchemaNew.parse(newDataComment);
 
   return comment;
 };

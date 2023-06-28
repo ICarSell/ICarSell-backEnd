@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { createCommentService, updateCommentByIdService } from "../../services";
 import { deleteCommentsService } from "../../services/comments/deleteComments.service";
-import { tCommentUpdate } from "../../interfaces";
+import { tCommentReturnNew, tCommentUpdate } from "../../interfaces";
 
 export const createCommentController = async (req: Request, res: Response) => {
   const userId = String(res.locals.userId);
@@ -24,9 +24,9 @@ export const updateCommentController = async (req: Request, res: Response) => {
 
   const idComment = Number(req.params.id);
 
-  const dataComment: tCommentUpdate = req.body;
+  const dataComment: tCommentReturnNew = req.body;
 
-  const comment: tCommentUpdate = await updateCommentByIdService(dataComment, idComment);
+  const comment: tCommentReturnNew = await updateCommentByIdService(dataComment, idComment);
 
   return res.status(200).json(comment);
 };
