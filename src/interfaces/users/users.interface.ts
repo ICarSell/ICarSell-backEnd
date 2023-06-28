@@ -1,7 +1,6 @@
 import { DeepPartial } from "typeorm";
 import { z } from "zod";
 import { userCreateSchema, userReturnSchema } from "../../schemas";
-import { returnUserAnnouncementImgCover } from "../../schemas/users/users.schemas";
 
 export type tUserReq = z.infer<typeof userCreateSchema>;
 export type tUserUpdateReq = Omit<
@@ -15,4 +14,3 @@ export type tUserReturnWithoutPassAndAddress = Omit<
   "address"
 >;
 export type tUserUpdate = DeepPartial<tUserUpdateReq>;
-export type tUserListOneReturn = z.infer<typeof returnUserAnnouncementImgCover>;
