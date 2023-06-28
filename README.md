@@ -44,6 +44,16 @@ O iCarSell é desenvolvido utilizando as seguintes tecnologias:
 
 ---
 
+## Iniciando a api
+
+- Depois de fazer o clone api, abra ela no editor de código da sua escolha, abra o terminal e rode o comando `yarn` para baixar as dependências da api.
+
+- Para rodar a api, insera o comando `yarn start` no terminal.
+
+- Pronto, a api já esta rodando e pronta para fazer as suas requisição.
+
+---
+
 $~$
 
 ## EndPoints
