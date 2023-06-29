@@ -17,6 +17,7 @@ import {
   updateAnnouncementController,
 } from "../../controllers";
 import { getAnnouncementByIdController } from "../../controllers/announcement/announcement.controller";
+import fs from "fs";
 
 export const announcementRouter: Router = Router();
 
@@ -26,7 +27,12 @@ const storage = multer.diskStorage({
     file: any,
     cb: (arg0: null, arg1: string) => void
   ) {
-    cb(null, "public/uploads");
+    const uploadDir = "public/uploads";
+
+    if (!fs.existsSync(uploadDir)) {
+      fs.mkdirSync(uploadDir, { recursive: true });
+    }
+    cb(null, uploadDir);
   },
   filename: function (
     req: any,
