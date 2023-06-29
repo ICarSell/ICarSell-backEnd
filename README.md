@@ -60,7 +60,7 @@ $~$
 
 - A API tem um total de 5 rotas que são divididas em 14 endPoints - podendo fazer login, resetar senha, cadastrar, editar e excluir perfil, cadastrar, editar e excluir anúncios, cadastrar, editar e excluir comentários.
 
-- O url base da API é X
+- O url base da API é "https://i-car-sell-web.onrender.com"
 
 $~$
 
@@ -152,7 +152,7 @@ $~$
 
 ```json
 {
-"message": "Nenhum anúncio foi encontrado"
+  "message": "Nenhum anúncio foi encontrado"
 }
 ```
 
