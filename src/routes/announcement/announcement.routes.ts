@@ -19,7 +19,15 @@ import {
 import { getAnnouncementByIdController } from "../../controllers/announcement/announcement.controller";
 import fs from "fs";
 
+const cloudinary = require("cloudinary").v2;
+
 export const announcementRouter: Router = Router();
+
+cloudinary.config({
+  cloud_name: "dqbeocdcm",
+  api_key: "823447954476992",
+  api_secret: "8jPMadTfs7b-1kn5gst0U8CosiQ",
+});
 
 const storage = multer.diskStorage({
   destination: function (
@@ -67,7 +75,6 @@ announcementRouter.patch(
     { name: "gallery", maxCount: 6 },
   ]),
   ensureTokenValidMiddlewares,
-  // ensureValidBodyMiddlewares(updateAnnouncementSchema),
   ensureAnnouncementExistsMiddlewares,
   updateAnnouncementController
 );
