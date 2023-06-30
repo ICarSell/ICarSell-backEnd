@@ -3,6 +3,11 @@ import { AppDataSource } from "../../data-source";
 import { Announcement, Gallery, ImgCover, User } from "../../entities";
 import { IAnnouncement, IReturnAnnouncement } from "../../interfaces";
 import { returnAnnouncementSchema } from "../../schemas";
+const cloudinary = require("cloudinary").v2;
+
+interface CloudinaryUploadResult {
+  secure_url: string;
+}
 
 export const createAnnouncementService = async (
   data: IAnnouncement,
@@ -26,6 +31,41 @@ export const createAnnouncementService = async (
       },
     });
 
+    const imgCoverResult = await new Promise<CloudinaryUploadResult>(
+      (resolve, reject) => {
+        cloudinary.uploader.upload(
+          imgCoverFile.path,
+          (err: any, result: CloudinaryUploadResult) => {
+            if (err) {
+              reject(err);
+            } else {
+              resolve(result);
+            }
+          }
+        );
+      }
+    );
+
+    const galleryResults = await Promise.all(
+      galleryFiles.map((galleryFile) => {
+        return new Promise<CloudinaryUploadResult>((resolve, reject) => {
+          cloudinary.uploader.upload(
+            galleryFile.path,
+            (err: any, result: CloudinaryUploadResult) => {
+              if (err) {
+                reject(err);
+              } else {
+                resolve(result);
+              }
+            }
+          );
+        });
+      })
+    );
+
+    const imgCoverPath = imgCoverResult.secure_url;
+    const galleryPaths = galleryResults.map((result) => result.secure_url);
+
     const announcement = announcementRepository.create({
       ...data,
       user: user!,
@@ -33,7 +73,7 @@ export const createAnnouncementService = async (
 
     const imgCover = new ImgCover();
     imgCover.fileName = imgCoverFile.filename;
-    imgCover.path = imgCoverFile.path;
+    imgCover.path = imgCoverPath; // Atualiza o caminho com a URL do Cloudinary
 
     await imgCoverRepository.save(imgCover);
 
@@ -43,10 +83,10 @@ export const createAnnouncementService = async (
 
     announcement.gallery = [];
 
-    const galleryPromises = galleryFiles.map(async (galleryFile) => {
+    const galleryPromises = galleryFiles.map(async (galleryFile, index) => {
       const gallery = new Gallery();
       gallery.fileName = galleryFile.filename;
-      gallery.path = galleryFile.path;
+      gallery.path = galleryPaths[index]; // Atualiza o caminho com a URL do Cloudinary
       gallery.announcement = announcement;
 
       await galleryRepository.save(gallery);

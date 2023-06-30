@@ -10,17 +10,19 @@ import {
 import { getAnnouncementByIdService } from "../../services/announcement/getAnnouncementbyId.service";
 import { AppError } from "../../errors";
 import { updateOnlyInfoAnnouncementService } from "../../services/announcement/updateOnlyInfoAnnouncement.service";
+import { IReturnAnnouncement } from "../../interfaces";
+
+import fs from "fs";
 
 export const createAnnouncementController = async (
   request: Request,
   response: Response
 ) => {
   const data: IAnnouncement = request.body;
-  console.log(data);
+
   const files = request.files as { [fieldname: string]: Express.Multer.File[] };
 
   const sellerId = response.locals.userId;
-  console.log(sellerId);
 
   const imgCoverFile = files["imgCover"][0];
   const galleryFiles = files["gallery"];
@@ -31,6 +33,18 @@ export const createAnnouncementController = async (
     galleryFiles,
     sellerId
   );
+
+  try {
+    // Excluir a imagem de capa
+    fs.unlinkSync(imgCoverFile.path);
+
+    // Excluir as imagens da galeria
+    galleryFiles.forEach((galleryFile) => {
+      fs.unlinkSync(galleryFile.path);
+    });
+  } catch (error) {
+    console.error("Error deleting local images:", error);
+  }
 
   return response.status(201).json(newAnnouncement);
 };
@@ -54,6 +68,8 @@ export const getAnnouncementByIdController = async (
   return response.status(200).json(getAnnouncement);
 };
 
+import { uploadImageToCloudinary } from "../../utils/cloudnary";
+
 export const updateAnnouncementController = async (
   request: Request,
   response: Response
@@ -66,7 +82,7 @@ export const updateAnnouncementController = async (
     const imgCoverFile = files["imgCover"]?.[0];
     const galleryFiles = files["gallery"];
 
-    const updateAnnouncement: IUpdateAnnouncement =
+    const updateAnnouncement: IReturnAnnouncement =
       await updateAnnouncementService(
         dataUser,
         idAnnouncement,
