@@ -65,7 +65,10 @@ export class Announcement {
   user: User;
 
   @OneToMany(() => Comments, (comments) => comments.announcements, {
+    cascade: ["remove"], // Use cascade: ["remove"]
     onDelete: "CASCADE",
   })
   comments: Comments[];
 }
+
+//    await queryRunner.query(`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`);

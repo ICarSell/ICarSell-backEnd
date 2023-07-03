@@ -1,7 +1,7 @@
 import { MigrationInterface, QueryRunner } from "typeorm";
 
-export class InitialMigration1688404918731 implements MigrationInterface {
-  name = "InitialMigration1688404918731";
+export class InitialMigration1688407274536 implements MigrationInterface {
+  name = "InitialMigration1688407274536";
 
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.query(`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`);
@@ -27,10 +27,10 @@ export class InitialMigration1688404918731 implements MigrationInterface {
       `ALTER TABLE "gallery" ADD CONSTRAINT "FK_fe316208eabe2706d52fee26389" FOREIGN KEY ("announcementId") REFERENCES "announcement"("id") ON DELETE CASCADE ON UPDATE NO ACTION`
     );
     await queryRunner.query(
-      `ALTER TABLE "comments" ADD CONSTRAINT "FK_7e8d7c49f218ebb14314fdb3749" FOREIGN KEY ("userId") REFERENCES "user"("id") ON DELETE NO ACTION ON UPDATE NO ACTION`
+      `ALTER TABLE "comments" ADD CONSTRAINT "FK_7e8d7c49f218ebb14314fdb3749" FOREIGN KEY ("userId") REFERENCES "user"("id") ON DELETE CASCADE ON UPDATE NO ACTION`
     );
     await queryRunner.query(
-      `ALTER TABLE "comments" ADD CONSTRAINT "FK_470826bd8eeac6a6252a3891717" FOREIGN KEY ("announcementsId") REFERENCES "announcement"("id") ON DELETE NO ACTION ON UPDATE NO ACTION`
+      `ALTER TABLE "comments" ADD CONSTRAINT "FK_470826bd8eeac6a6252a3891717" FOREIGN KEY ("announcementsId") REFERENCES "announcement"("id") ON DELETE CASCADE ON UPDATE NO ACTION`
     );
     await queryRunner.query(
       `ALTER TABLE "announcement" ADD CONSTRAINT "FK_5f6ac17aaca9a7a29d8342cdc08" FOREIGN KEY ("imgCoverId") REFERENCES "imgCover"("id") ON DELETE CASCADE ON UPDATE NO ACTION`
