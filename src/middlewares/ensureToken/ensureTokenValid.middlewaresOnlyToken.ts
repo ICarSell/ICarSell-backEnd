@@ -19,11 +19,6 @@ export const ensureTokenValidMiddlewaresOnlyToken = async (
       throw new AppError(error.message, 401);
     }
 
-    if (decode.isSeller) {
-      response.locals.sellerId = decode.isSeller;
-      response.locals.userId = decode.sub;
-      return next();
-    }
     response.locals.userId = decode.sub;
 
     throw new AppError("Insufficient permission", 403);
