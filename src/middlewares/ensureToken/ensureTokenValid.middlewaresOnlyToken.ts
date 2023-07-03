@@ -20,7 +20,6 @@ export const ensureTokenValidMiddlewaresOnlyToken = async (
     }
 
     response.locals.userId = decode.sub;
-
-    throw new AppError("Insufficient permission", 403);
+    next();
   });
 };
