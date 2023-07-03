@@ -62,6 +62,7 @@ export class User {
   }
 
   @OneToMany(() => Comments, (comments) => comments.user, {
+    cascade: ["remove"], // Use cascade: ["remove"]
     onDelete: "CASCADE",
   })
   comments: Comments[];
