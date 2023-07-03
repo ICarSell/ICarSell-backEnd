@@ -64,6 +64,8 @@ export class Announcement {
   @JoinColumn()
   user: User;
 
-  @OneToMany(() => Comments, (comments) => comments.announcements)
+  @OneToMany(() => Comments, (comments) => comments.announcements, {
+    onDelete: "CASCADE",
+  })
   comments: Comments[];
 }

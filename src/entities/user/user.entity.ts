@@ -61,6 +61,8 @@ export class User {
     this.password = hashSync(this.password, 9);
   }
 
-  @OneToMany(() => Comments, (comments) => comments.user)
+  @OneToMany(() => Comments, (comments) => comments.user, {
+    onDelete: "CASCADE",
+  })
   comments: Comments[];
 }
