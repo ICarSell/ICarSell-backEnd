@@ -3,6 +3,7 @@ import { ensureValidBodyMiddlewares } from "./bodyRequest/ensureValidBody.middle
 import { ensureTokenValidMiddlewares } from "./ensureToken/ensureTokenValid.middlewares";
 import { verifyCpfExistsMiddleware } from "./users/verifyCpfExists.middleware";
 import { verifyEmailExistsMiddleware } from "./users/verifyEmailExists.middleware";
+import { ensureTokenValidMiddlewaresOnlyToken } from "./ensureToken/ensureTokenValid.middlewaresOnlyToken";
 
 export {
   ensureAnnouncementExistsMiddlewares,
@@ -10,4 +11,5 @@ export {
   ensureTokenValidMiddlewares,
   verifyEmailExistsMiddleware,
   verifyCpfExistsMiddleware,
+  ensureTokenValidMiddlewaresOnlyToken,
 };

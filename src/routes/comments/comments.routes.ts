@@ -4,30 +4,30 @@ import {
   updateCommentController,
 } from "../../controllers";
 import {
-  ensureTokenValidMiddlewares,
+  ensureTokenValidMiddlewaresOnlyToken,
   ensureValidBodyMiddlewares,
 } from "../../middlewares";
 import { createCommentSchema } from "../../schemas";
-import { deleteCommentsService } from "../../services/comments/deleteComments.service";
+
 import { deleteCommentsController } from "../../controllers/comments/comments.controller";
 
 export const commentsRouter: Router = Router();
 
 commentsRouter.post(
   "/:id",
-  ensureTokenValidMiddlewares,
+  ensureTokenValidMiddlewaresOnlyToken,
   ensureValidBodyMiddlewares(createCommentSchema),
   createCommentController
 );
 
 commentsRouter.delete(
   "/:id",
-  ensureTokenValidMiddlewares,
+  ensureTokenValidMiddlewaresOnlyToken,
   deleteCommentsController
 );
 
 commentsRouter.patch(
   "/:id",
-  ensureTokenValidMiddlewares,
+  ensureTokenValidMiddlewaresOnlyToken,
   updateCommentController
 );
